@@ -33,11 +33,10 @@
 }
 
 body{
-
-    background-color: lightslategray;
-    height: auto;
-    background: url("assets/jaquettes/Disques_Vinyles_1024x1024.jpeg");
-    background-size: cover;  
+    background: url("/assets/images_the_district/food/spaghetti-legumes.jpg");
+    background-attachment: fixed;
+    background-size: cover; 
+    /* height: 100%;  */
 }
 
 header{
@@ -46,22 +45,21 @@ header{
     height: auto;  
 }
 
+a span:hover{
+    color:deeppink;
+}
+
+.button_color{
+    color: deeppink;
+    background-color: deeppink;
+}
+
 #navbarNav{
-    background-color: blueviolet;
-    
-    
+    background-color:purple;   
 }
 
 .bg_li{
     background-color: black;
-}
-
-.bg_title{
-    background: url("");
-}
-
-.jaquettes{
-    min-width: 100%;
 }
 
 h1{
@@ -72,9 +70,31 @@ h1{
     color: white;
 }
 
-.div_discs{    
-    background-color: lightslategray;
+.div_cat{    
+    background-color:rgba(128, 0, 128, 0.651);
     border-radius : 10px;
+}
+
+.cat_count{
+    background-color: purple;
+    color: white;
+}
+
+.libelle{
+    background-color: purple;
+    color:white;
+}
+
+.cat_img{
+    /* border-radius : 10px; */
+    width: 100%;
+}
+
+.zoom_cat:hover{
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Safari 3-8 */
+    transform: scale(1.5);
+    transition: transform 5s;
 }
 
 .jaquettes{

@@ -3,7 +3,7 @@
 function connexionBase(){
     
     $charset="utf8";
-    $db="record";
+    $db="the_district";
     $dbhost="localhost";
 
     $dbport=3306;

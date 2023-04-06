@@ -21,23 +21,27 @@
             </div>
             
             <nav class="navbar navbar-expand-lg p-0">
-                <!-- <a class="navbar-brand" href="#">Navbar</a> -->
-
-                <div class="col navbar-collapse justify-content-center" id="navbarNav">
-                    <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" style="color:white" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" style="color:white" href="#">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" style="color:white" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" style="color:white" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </li>
+                <div class="row navbar-collapse py-2" id="navbarNav">
+                    <ul class="col-8 navbar-nav d-flex justify-content-around p-0">
+                        <li class="nav-item active mx-5">
+                            <a class="nav-link" style="color:white" href="#"><span><strong>Accueil</strong></span><span class="sr-only"></span></a>
+                        </li>
+                        <li class="nav-item mx-5">
+                            <a class="nav-link" style="color:white" href="#"><span><strong>Catégories</strong></span></a>
+                        </li>
+                        <li class="nav-item mx-5">
+                            <a class="nav-link" style="color:white" href="#"><span><strong>Plats</strong></span></a>
+                        </li>
+                        <li class="nav-item mx-5">
+                            <a class="nav-link" style="color:white" href="#"><span><strong>Contact</strong></span></a>
+                        </li>
                     </ul>
+                    <div class="col d-flex justify-content-center input-group p-0">
+                        <input id="oSaisie" name="oSaisie" type="text" aria-label="Saisie de mots clés" placeholder="Mot(s) clé(s)" required="required">
+                        <div class="input-group-append">
+                            <button class="btn btn-success button button_color" width="20px" type="submit">Recherche</button>
+                        </div>
+                    </div>
                 </div>
             </nav>
         </div>
