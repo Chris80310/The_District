@@ -45,6 +45,10 @@ header{
     height: auto;  
 }
 
+a{
+    color: aliceblue;
+}
+
 a span:hover{
     color:deeppink;
 }
@@ -71,8 +75,14 @@ h1{
 }
 
 .div_cat{    
-    background-color:rgba(128, 0, 128, 0.651);
+    background-color:rgba(0, 0, 0, 0.427);
     border-radius : 10px;
+
+    /* filter:blur(4px);
+    -o-filter:blur(4px);
+    -ms-filter:blur(4px);
+    -moz-filter:blur(4px);
+    -webkit-filter:blur(4px); */
 }
 
 .cat_count{
@@ -90,19 +100,21 @@ h1{
     width: 100%;
 }
 
-.zoom_cat:hover{
+#card{
+    background-color: purple;
+    color: bisque;
+}
+
+#card:hover{  
     -ms-transform: scale(1.5); /* IE 9 */
     -webkit-transform: scale(1.5); /* Safari 3-8 */
     transform: scale(1.5);
     transition: transform 5s;
 }
 
-.jaquettes{
-    border-radius : 10px;
-}
-
-.titre_album{
-    font-weight : bold;
+a.card_title:link{
+    text-decoration: none;
+    color: black;
 }
 
 .cont_form{
