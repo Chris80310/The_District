@@ -49,6 +49,6 @@ INSERT INTO categorie (libelle, desription, prix, image, active) VALUES (libelle
 
 --     4. Ecrivez une requête permettant d'augmenter de 10% le prix des plats de la catégorie 'Pizza'
 
-UPDATE plat SET prix = prix * 1.1 join categorie on plat.id = categorie.id where libelle = "Pizza";
+UPDATE plat SET prix = prix * 1.1 join categorie on plat.id_categorie = categorie.id where libelle = "Pizza";
 
 
