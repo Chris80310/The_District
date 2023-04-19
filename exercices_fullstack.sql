@@ -54,7 +54,7 @@ UPDATE plat SET prix = prix * 1.1 where id_categorie = 4;
 -- Methode 2 :
 UPDATE plat SET prix = prix * 1.1 where plat.id_categorie = (SELECT categorie.id FROM categorie WHERE libelle = "Pizza");
 -- Methode 3 :
-UPDATE plat JOIN categorie ON id_categorie = plat.id SET prix = prix * 1.1  where id_categorie = "Pizza";
+UPDATE plat JOIN categorie ON id_categorie = categorie.id SET prix = prix * 1.1  where id_categorie = "Pizza";
 
 
 
