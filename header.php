@@ -24,16 +24,16 @@
                 <div class="row navbar-collapse py-2" id="navbarNav">
                     <ul class="col-8 navbar-nav d-flex justify-content-around p-0">
                         <li class="nav-item active mx-5">
-                            <a class="nav-link" style="color:white" href="#"><span><strong>Accueil</strong></span><span class="sr-only"></span></a>
+                            <a class="nav-link" style="color:white" href="/index.php"><span><strong>Accueil</strong></span><span class="sr-only"></span></a>
                         </li>
                         <li class="nav-item mx-5">
-                            <a class="nav-link" style="color:white" href="#"><span><strong>Catégories</strong></span></a>
+                            <a class="nav-link" style="color:white" href="categories.php"><span><strong>Catégories</strong></span></a>
                         </li>
                         <li class="nav-item mx-5">
-                            <a class="nav-link" style="color:white" href="#"><span><strong>Plats</strong></span></a>
+                            <a class="nav-link" style="color:white" href="plats.php"><span><strong>Plats</strong></span></a>
                         </li>
                         <li class="nav-item mx-5">
-                            <a class="nav-link" style="color:white" href="#"><span><strong>Contact</strong></span></a>
+                            <a class="nav-link" style="color:white" href="contact.php"><span><strong>Contact</strong></span></a>
                         </li>
                     </ul>
                     <div class="col d-flex justify-content-center input-group p-0">

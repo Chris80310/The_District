@@ -24,7 +24,7 @@ select plat.libelle, quantite from plat join commande on commande.id_plat = plat
 
 --     Le plat le plus rémunérateur
 
-select plat.libelle, (count(*)*plat.prix) as total from commande join plat on commande.id_plat group by plat.libelle order by total desc limit 1;
+select plat.libelle, (count(*)*plat.prix) as total from commande join plat on commande.id_plat group by plat.libelle order by total desc limit 3;
 
 --     Liste des clients et le chiffre d'affaire généré par client (par ordre décroissant)
 

@@ -106,15 +106,19 @@ h1{
 }
 
 #card:hover{  
-    -ms-transform: scale(1.2); /* IE 9 */
-    -webkit-transform: scale(1.2); /* Safari 3-8 */
-    transform: scale(1.2);
-    transition: transform 5s;
+    -ms-transform: scale(1.15); /* IE 9 */
+    -webkit-transform: scale(1.15); /* Safari 3-8 */
+    transform: scale(1.15);
+    transition: transform 1s;
 }
 
+/* Lien sur card : */
 a.card_title:link{
     text-decoration: none;
-    color: black;
+}
+
+.card_title{
+    color: white;
 }
 
 .cont_form{
