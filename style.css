@@ -85,6 +85,7 @@ h1{
     -webkit-filter:blur(4px); */
 }
 
+/* Titre : */
 .cat_count{
     background-color: purple;
     color: white;
@@ -121,7 +122,36 @@ a.card_title:link{
     color: white;
 }
 
-.cont_form{
-    background-color: lightslategray;
-    border-radius : 10px;
+label{
+    color: white;
+    /* background-color: purple; */
+}
+
+/* Boutons formulaire : */
+
+input.btn_form{
+    background: purple;
+    color: white;
+    border-color: purple;
+}
+
+input.btn_form:hover{
+    background-color :green;
+    border-color: green;
+}
+
+a.btn_form{
+    background: purple;
+    color: white;
+    border-color: purple;
+}
+
+a.btn_form:hover{
+    background-color :green;
+    border-color: green;
+}
+
+.form{
+    border-color: purple;
+    border-radius: 6px;
 }

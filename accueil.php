@@ -17,14 +17,13 @@
     $requete->closeCursor();
 
      // foreach plats populaires
-    $requete2 = $db->query
-
-    ("SELECT plat.libelle, plat.image FROM plat 
+    $requete2 = $db->query("SELECT plat.libelle, plat.image FROM plat 
     JOIN commande ON commande.id_plat = plat.id 
     ORDER BY quantite DESC LIMIT 3");
 
     $resultat2 = $requete2->fetchAll(PDO::FETCH_OBJ);
-    $requete2->closeCursor(); 
+    $requete2->closeCursor();
+
 ?>
 
 <body class="bg1">
@@ -42,7 +41,7 @@
 
                     <div class="card liste-cat m-auto my-3" id="card" style="width: 18rem;">
                         <div class="card-body p-2">
-                            <a href="#" class="card_title">
+                            <a href="plat_list.php?id=<?= $infos->id?>" class="card_title">
                             <!-- affichage des noms de catégories -->
                             <h5 class="card-title" style="text-align:center"><strong>Nos plats "<?= $infos->libelle?>"</strong></h5>
                             <!-- partie inférieure avec l'image -->
