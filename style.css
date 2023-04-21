@@ -146,7 +146,13 @@ a.btn_form{
     border-color: purple;
 }
 
-a.btn_form:hover{
+a.btn_comm{
+    background-color:white;
+    color:purple;
+    border-color:white;
+}
+
+a.btn_form,a.btn_comm:hover{
     background-color :green;
     border-color: green;
 }

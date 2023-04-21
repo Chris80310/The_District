@@ -37,20 +37,19 @@
         </div>
         
         <div class="d-flex flex-wrap liste_cat">
-                <?php foreach ($resultat as $infos): ?>
+            <?php foreach ($resultat as $infos): ?>
 
-                    <div class="card liste-cat m-auto my-3" id="card" style="width: 18rem;">
-                        <div class="card-body p-2">
-                            <a href="plat_list.php?id=<?= $infos->id?>" class="card_title">
-                            <!-- affichage des noms de catégories -->
-                            <h5 class="card-title" style="text-align:center"><strong>Nos plats "<?= $infos->libelle?>"</strong></h5>
-                            <!-- partie inférieure avec l'image -->
-                            <img src="assets/images_the_district/category/<?= $infos->image?>" class="card-img-top img-responsive" alt="image"></a>
-                            <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->   
-                        </div>
-                    </div>  
+                <div class="card liste-cat m-auto my-3" id="card" style="width: 18rem;">
+                    <div class="card-body p-2">
+                        <a href="plat_list.php?id=<?= $infos->id?>" class="card_title">
+                        <!-- affichage des noms de catégories -->
+                        <h5 class="card-title p-auto" style="text-align:center"><strong>Nos plats "<?= $infos->libelle?>"</strong></h5>
+                        <!-- partie inférieure avec l'image -->
+                        <img src="assets/images_the_district/category/<?= $infos->image?>"class="card-img-top img-responsive" alt="image"></a> 
+                    </div>
+                </div>  
 
-                <?php endforeach; ?>
+            <?php endforeach; ?>
         </div>
 
         <!-- Plats sugérés par popularité : -->

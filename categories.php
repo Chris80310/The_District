@@ -25,7 +25,7 @@ $requete->closeCursor();
 
                 <div class="card liste-cat m-auto my-3" id="card" style="width: 18rem;">
                     <div class="card-body p-2">
-                        <a href="#" class="card_title">
+                        <a href="plat_list.php?id=<?= $infos->id?>" class="card_title">
                         <!-- affichage des noms de catégories -->
                         <h5 class="card-title" style="text-align:center"><strong>Nos plats "<?= $infos->libelle?>"</strong></h5>
                         <!-- partie inférieure avec l'image -->
