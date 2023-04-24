@@ -104,6 +104,7 @@ h1{
 #card{
     background-color: purple;
     color: bisque;
+    transition: transform 1s;
 }
 
 #card:hover{  
@@ -152,7 +153,7 @@ a.btn_comm{
     border-color:white;
 }
 
-a.btn_form,a.btn_comm:hover{
+a.btn_form:hover,a.btn_comm:hover{
     background-color :green;
     border-color: green;
 }

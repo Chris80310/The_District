@@ -23,9 +23,7 @@
     // Header (banière / logo) :
     include("header.php");
 
-    // var_dump($plat_info);
-
-     
+    // var_dump($plat_info2);    
 ?>
 
 <body class="bg1">
@@ -44,7 +42,7 @@
                     
                     <div class="card liste-cat m-auto my-3" id="card" style="width: 18rem;">
                         <div class="card-body p-2">
-                    
+                            
                             <!-- affichage des noms du plat -->
                             <div CLASS="d-flex justify-content-center my-2"> 
                                 <h5 class="card-title" style="text-align:center"><h5><?= $plat->libelle?></h5>

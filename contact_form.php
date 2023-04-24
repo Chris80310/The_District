@@ -12,7 +12,7 @@ include "header.php"
             <h1>Contact</h1>
         </div>
 
-        <form action ="contact_script.php" method="post">
+        <form action ="script_contact.php" method="post">
 
             <div class="">
                 <div class="row my-5 m-auto">
@@ -38,7 +38,7 @@ include "header.php"
                         <label for="url_label"><h5>Adresse mail:</h5></label>
                     </div>
                     <div class="col-9">
-                        <input type="text" class="col-8 form" name="email" id="form">
+                        <input type="text" class="col-8 form" name="email" id="form" placeholder=" Exemple@service.com">
                     </div>
                 </div>   
 
@@ -48,6 +48,15 @@ include "header.php"
                     </div>  
                     <div class="col-9">
                         <input type="password" class="col-8 form" name="tel" id="form">
+                    </div>
+                </div> 
+
+                <div class="row my-5 m-auto">
+                    <div class="col">
+                        <label for="txt_label"><h5>Votre message :</h5></label> <br>
+                    </div>  
+                    <div class="col-9">
+                        <textarea name="" id="" cols="20" rows="10" class="col-8 form" name="tel" id="form" placeholder=" Votre message ici"></textarea>
                     </div>
                 </div> 
 

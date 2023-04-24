@@ -17,7 +17,7 @@
     $requete->closeCursor();
 
      // foreach plats populaires
-    $requete2 = $db->query("SELECT plat.libelle, plat.image FROM plat 
+    $requete2 = $db->query("SELECT plat.libelle, plat.image, plat.id_categorie FROM plat 
     JOIN commande ON commande.id_plat = plat.id 
     ORDER BY quantite DESC LIMIT 3");
 
@@ -63,7 +63,7 @@
 
                     <div class="card liste-cat m-auto my-3" id="card" style="width: 18rem;">
                         <div class="card-body p-2">
-                            <a href="#" class="card_title">
+                            <a href="plat_list.php?id=<?=$infos2->id_categorie?>" class="card_title">
                             <!-- affichage des noms de catégories -->
                             <h5 class="card-title" style="text-align:center"><strong>"<?= $infos2->libelle?>"</strong></h5>
                             <!-- partie inférieure avec l'image -->
