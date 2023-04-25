@@ -103,8 +103,14 @@ h1{
 
 #card{
     background-color: purple;
-    color: bisque;
+    color:white;
     transition: transform 1s;
+}
+
+/* Formulaire commande : */
+#cmde{
+    background-color: purple;
+    color: white;
 }
 
 #card:hover{  
@@ -158,6 +164,7 @@ a.btn_form:hover,a.btn_comm:hover{
     border-color: green;
 }
 
+/* Formulaire contact : */
 .form{
     border-color: purple;
     border-radius: 6px;

@@ -17,7 +17,7 @@
     $requete->closeCursor();
 
      // foreach plats populaires
-    $requete2 = $db->query("SELECT plat.libelle, plat.image, plat.id_categorie FROM plat 
+    $requete2 = $db->query("SELECT plat.* FROM plat 
     JOIN commande ON commande.id_plat = plat.id 
     ORDER BY quantite DESC LIMIT 3");
 
@@ -59,20 +59,20 @@
         </div>
 
         <div class="d-flex flex-wrap liste_cat">
-                <?php foreach ($resultat2 as $infos2): ?>
+            <?php foreach ($resultat2 as $infos2): ?>
 
-                    <div class="card liste-cat m-auto my-3" id="card" style="width: 18rem;">
-                        <div class="card-body p-2">
-                            <a href="plat_list.php?id=<?=$infos2->id_categorie?>" class="card_title">
-                            <!-- affichage des noms de catégories -->
-                            <h5 class="card-title" style="text-align:center"><strong>"<?= $infos2->libelle?>"</strong></h5>
-                            <!-- partie inférieure avec l'image -->
-                            <img src="assets/images_the_district/food/<?= $infos2->image?>" class="card-img-top img-responsive" alt="image"></a>
-                            <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->   
-                        </div>
+                <div class="card liste-cat m-auto my-3" id="card" style="width: 18rem;">
+                    <div class="card-body p-2">
+                        <a href="commande.php?id=<?=$infos2->id?>" class="card_title">
+                        <!-- affichage des noms de catégories -->
+                        <h5 class="card-title" style="text-align:center"><strong>"<?= $infos2->libelle?>"</strong></h5>
+                        <!-- partie inférieure avec l'image -->
+                        <img src="assets/images_the_district/food/<?= $infos2->image?>" class="card-img-top img-responsive" alt="image"></a>
+                        <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->   
                     </div>
-                    
-                <?php endforeach; ?>
+                </div>
+                
+            <?php endforeach; ?>
         </div>
 
     </div>
