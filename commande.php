@@ -20,11 +20,15 @@ include("header.php");
 <body>
 
     
-    <div class="card liste-cat m-auto my-3" id="cmde" style="width: 50rem">
-        <div class="card-body p-2">
-            <div class="d-lg-flex">
+    <div class="card liste-cat m-auto my-5" id="cmde" style="width: 50rem">
+        <div class="card-body p-1">
+            <div class="row m-auto">
 
-                <div class="col-lg-4 m-auto">
+                <div class="col-12 d-flex justify-content-center mx-auto my-5 cat_count rounded p-3">  
+                    <h1>Commande</h1>
+                </div>
+
+                <div class="col-lg-6">
                     <?php foreach ($resultat as $info): ?>
                         <!-- affichage des noms du plat -->
                         <div CLASS="d-flex justify-content-center my-2"> 
@@ -41,84 +45,114 @@ include("header.php");
                     <?php endforeach; ?>
                 </div>
 
-                <div class="col">
+                <div class="col-lg-6 my-auto">
                     
-                    <div class="col-3 d-flex justify-content-center mx-auto my-5 cat_count rounded p-3">  
+                    <!-- <div class="col-3 d-flex justify-content-center mx-auto my-5 cat_count rounded p-3">  
                         <h1>Commande</h1>
-                    </div>
+                    </div> -->
 
-                    <form action ="script_commande.php" method="post">
+                    <form action ="script_commande.php" class="" method="post">
 
-                        <div class="row my-5 m-auto">
-                            <div class="col">
-                                <label for="qte"><h5>Quantité :</h5></label>
+                        <div class="d-flex justify-content-between">
+                            <div class="mx-2">
+                                <label for="qte"><h5>Quantité: </h5></label>
+                                <br>
+                                <label for="prix"><h5>Prix: </h5></label>
                             </div>
-                            <div class="col-9">
-                                <select class="col-8 form" name="qte" id="form">
-                                    <option value="">Veuillez choisir une quantité</option>
+                            <div class="">
+                                <!-- Select quantité : -->
+                                <select class="mx-2" name="qte" id="qte">
+                                    <option value="" name="option" id="option">Choisir </option>
                                 </select>
-                            <script>
 
-                            </script>
+                                <!-- Script pour le select quantité : -->
+                                <script>
+                                var quantiteSelect = document.getElementById("qte");
+                                for (var i=1; i<=20; i++) { 
+                                var option = document.createElement("option");
+                                option.value = i;
+                                option.text = i;
+                                quantiteSelect.add(option);
+                                }
+                                </script>
+
+                                <!-- Prix : -->
+                                <div class="d-flex justify-content-between my-2">
+                                    <input type="text" id="prix" name="prix" value="<?=$info->prix?>" readonly>
+                                </div>
+                            
+                                <!-- Script pour le prix total : -->
+                                <script>
+                                        var prixElement = document.getElementById("prix");
+                                        var prixInitial = prixElement.value;
+                                        var numbersElement = document.getElementById("qte");
+                                        numbersElement.addEventListener("change", function() {
+                                        var quantite = numbersElement.value;
+                                        if (quantite !== "1") {
+                                            var total = parseFloat(prixInitial) * parseInt(quantite);
+                                            prixElement.value = total.toFixed(2);
+                                            } else {
+                                                prixElement.value = prixInitial;
+                                            }
+                                        });
+                                </script>
 
                             </div>
                         </div>
-
-                    
-                        <div class="row my-5 m-auto">
-                            <div class="col">
+     
+                        <div class="d-flex justify-content-between my-5">
+                            <div class="">
                                 <label for="nom"><h5>Nom & Prénom :</h5></label>
                             </div>
-                            <div class="col-9 m-auto">
-                                <input type="text" class="col-8 form" name="nom" id="form">
+                            <div class="">
+                                <input type="text" class="my-2" name="nom" id="form">
                             </div>
                         </div>
 
-                        <div class="row my-5 m-auto">
-                            <div class="col">
+                        <div class="d-flex justify-content-between my-5">
+                            <div class="">
                                 <label for="url_label"><h5>Adresse :</h5></label>
                             </div>
-                            <div class="col-9">
-                                <input type="text" class="col-8 form" name="adresse" id="form" placeholder=" Numéro de porte & rue ...">
+                            <div class="">
+                                <input type="text" class="" name="adresse" id="form" placeholder=" Numéro de porte & rue ...">
                             </div>
                         </div>  
 
-                        <div class="row my-5 m-auto">
-                            <div class="col">
+                        <div class="d-flex justify-content-between my-5">
+                            <div class="">
                                 <label for="ville"><h5>Ville & code postal :</h5></label>
                             </div>
-                            <div class="col-9">
-                                <input type="text" class="col-8 form my-1" name="ville" id="form" placeholder=" Ville">
-                                <input type="text" class="col-8 form my-1" name="cp" id="form" placeholder=" Code postal">
+                            <div class="">
+                                <input type="text" class="mb-2" name="ville" id="form" placeholder=" Ville">
+                                <input type="text" class="" name="cp" id="form" placeholder=" Code postal">
                             </div>
                         </div> 
                         
-                        <div class="row my-5 m-auto">
-                            <div class="col">
+                        <div class="d-flex justify-content-between my-5">
+                            <div class="">
                                 <label for="url_label"><h5>Mail :</h5></label>
                             </div>
-                            <div class="col-9">
-                                <input type="text" class="col-8 form" name="email" id="form" placeholder=" Exemple@service.com">
+                            <div class="">
+                                <input type="text" class="" name="email" id="form" placeholder=" Exemple@service.com">
                             </div>
                         </div>   
 
-                        <div class="row my-5 m-auto">
-                            <div class="col">
+                        <div class="d-flex justify-content-between my-5">
+                            <div class="">
                                 <label for="tel_label"><h5>Numéro de téléphone :</h5></label> <br>
                             </div>  
-                            <div class="col-9 m-auto">
-                                <input type="text" class="col-8 form" name="tel" id="form">
+                            <div class="">
+                                <input type="text" class="my-2" name="tel" id="form">
                             </div>
                         </div> 
-
-                        <div class="col-12 d-flex justify-content-center my-5">
-                            <input class="btn btn-primary col-2 mx-5 mt-3 btn_comm" type="submit" value="Confirmer">
-                            <a class="btn btn-primary col-2 mx-5 mt-3 btn_comm" href="plat_list.php?id=<?=$info->id?>">Retour</a>
-                        </div>
-
-
                     </form>
                 </div>
+
+                <div class="col-12 d-flex justify-content-center my-5">
+                    <input class="btn btn-primary col-2 mx-5 btn_comm" type="submit" value="Confirmer">
+                    <a class="btn btn-primary col-2 mx-5 btn_comm" href="plat_list.php?id=<?=$info->id?>">Retour</a>
+                </div>
+
             </div> 
         </div> 
     </div>

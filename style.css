@@ -136,30 +136,19 @@ label{
 
 /* Boutons formulaire : */
 
-input.btn_form{
+input.btn_form,a.btn_form2{
     background: purple;
     color: white;
     border-color: purple;
 }
 
-input.btn_form:hover{
-    background-color :green;
-    border-color: green;
-}
-
-a.btn_form{
-    background: purple;
-    color: white;
-    border-color: purple;
-}
-
-a.btn_comm{
+a.btn_form,a.btn_comm,input.btn_comm{
     background-color:white;
     color:purple;
     border-color:white;
 }
 
-a.btn_form:hover,a.btn_comm:hover{
+a.btn_form:hover,a.btn_form2:hover,a.btn_comm:hover,input.btn_comm:hover,input.btn_form:hover{
     background-color :green;
     border-color: green;
 }
