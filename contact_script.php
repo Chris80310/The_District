@@ -1,12 +1,13 @@
 <?php
 
-var_dump($_POST);
+var_dump($_REQUEST);
 
-    $nom   = (isset($_POST['nom']) && $_POST['nom'] !== "") ? $_POST['nom'] : Null;
-    $prenom    = (isset($_POST['prenom']) && $_POST['prenom'] !== "") ? $_POST['prenom']  : Null;
-    $email   = (isset($_POST['email']) && $_POST['email'] != "") ? $_POST['email'] : Null;
-    $tel   = (isset($_POST['tel']) && $_POST['tel'] != "") ? $_POST['tel'] : Null;
-    $Confirmer = (isset($_POST['Confirmer']));
+    $nom   = (isset($_REQUEST['nom']) && $_REQUEST['nom'] !== "") ? $_REQUEST['nom'] : Null;
+    $prenom    = (isset($_REQUEST['prenom']) && $_REQUEST['prenom'] !== "") ? $_REQUEST['prenom']  : Null;
+    $email   = (isset($_REQUEST['email']) && $_REQUEST['email'] != "") ? $_REQUEST['email'] : Null;
+    $tel   = (isset($_REQUEST['tel']) && $_REQUEST['tel'] != "") ? $_REQUEST['tel'] : Null;
+    $message   = (isset($_REQUEST['mess']) && $_REQUEST['mess'] != "") ? $_REQUEST['mess'] : Null;
+    $Confirmer = (isset($_REQUEST['Confirmer']));
 
     // En cas d'erreur, on renvoie vers le formulaire
 if ($nom == Null || $prenom == Null || $email == Null || $tel == Null) {

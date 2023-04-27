@@ -56,7 +56,7 @@ include "header.php"
                         <label for="txt_label"><h5>Votre message :</h5></label> <br>
                     </div>  
                     <div class="col-9">
-                        <textarea name="" id="" cols="20" rows="10" class="col-8 form" name="tel" id="form" placeholder=" Votre message ici"></textarea>
+                        <textarea name="" id="" cols="20" rows="10" class="col-8 form" name="mess" id="form" placeholder=" Votre message ici"></textarea>
                     </div>
                 </div> 
 

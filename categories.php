@@ -1,13 +1,9 @@
 <?php
-include "db.php";
-$db = connexionBase();
-
 include "header.php";
 
-// foreach catégories
-$requete = $db->query("SELECT * FROM categorie");
-$resultat = $requete->fetchAll(PDO::FETCH_OBJ);
-$requete->closeCursor();
+include "DAO.php";
+
+$cat=get_categories();
 
 ?>
 
@@ -17,11 +13,11 @@ $requete->closeCursor();
         <!-- catégories : -->
 
         <div class="col-5 d-flex justify-content-around mx-auto my-5 cat_count rounded p-3">  
-            <h2>Toutes nos spécialités (<?=count($resultat)?>)</h2>
+            <h2>Toutes nos spécialités (<?=count($cat)?>)</h2>
         </div>
         
         <div class="m-auto d-flex flex-wrap liste_cat">
-            <?php foreach ($resultat as $infos): ?>
+            <?php foreach ($cat as $infos): ?>
 
                 <div class="card liste-cat m-auto my-3" id="card" style="width: 18rem;">
                     <div class="card-body p-2">

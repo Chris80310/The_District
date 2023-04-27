@@ -1,6 +1,9 @@
 <?php
 
-include "script_accueil.php";
+// Header (banière / logo) :
+// include "header.php";
+
+include "DAO.php";
 
 $tab = accueil();
 $res = $tab[0];
@@ -15,11 +18,11 @@ $res2 = $tab[1];
         <!-- catégories : -->
 
         <div class="col-5 d-flex justify-content-center m-auto my-5 cat_count rounded p-3">  
-            <h1>Nos spécialités (<?=count($resultat)?>)</h1>
+            <h1>Nos spécialités (<?=count($res)?>)</h1>
         </div>
         
         <div class="d-flex flex-wrap liste_cat">
-            <?php foreach ($resultat as $infos): ?>
+            <?php foreach ($res as $infos): ?>
 
                 <div class="card liste-cat m-auto my-3" id="card" style="width: 18rem;">
                     <div class="card-body p-2">
@@ -41,7 +44,7 @@ $res2 = $tab[1];
         </div>
 
         <div class="d-flex flex-wrap liste_cat">
-            <?php foreach ($resultat2 as $infos2): ?>
+            <?php foreach ($res2 as $infos2): ?>
 
                 <div class="card liste-cat m-auto my-3" id="card" style="width: 18rem;">
                     <div class="card-body p-2">

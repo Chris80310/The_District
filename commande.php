@@ -21,37 +21,38 @@ include("header.php");
 
     
     <div class="card liste-cat m-auto my-5" id="cmde" style="width: 50rem">
-        <div class="card-body p-1">
-            <div class="row m-auto">
+        <div class="col-12 card-body p-1">
 
-                <div class="col-12 d-flex justify-content-center mx-auto my-5 cat_count rounded p-3">  
-                    <h1>Commande</h1>
-                </div>
+            <form action ="script_commande.php" class="" method="post">
 
-                <div class="col-lg-6">
-                    <?php foreach ($resultat as $info): ?>
-                        <!-- affichage des noms du plat -->
-                        <div CLASS="d-flex justify-content-center my-2"> 
-                            <h5 class="card-title" style="text-align:center"><h5><?= $info->libelle?></h5>
-                        </div>
-                        <!-- partie inférieure avec l'image -->
-                        <img src="/assets/images_the_district/food/<?= $info->image?>" class="img-fluid card-img-top img_plat"  alt="jaquettes" height="300px" width="300px">
-                        <!-- affichage des noms du prix -->
-                        <p style="text-align:center" class="mt-4"><strong><?= $info->prix .' €'?></strong></p>
-                        <!-- affichage de la description -->
-                        <div class="row descr">
-                            <p style="text-align:center"><?= $info->description?></p>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
+                <div class="row m-auto">
 
-                <div class="col-lg-6 my-auto">
-                    
-                    <!-- <div class="col-3 d-flex justify-content-center mx-auto my-5 cat_count rounded p-3">  
+                    <div class="col-12 d-flex justify-content-center mx-auto my-5 cat_count rounded p-3">  
                         <h1>Commande</h1>
-                    </div> -->
+                    </div>
 
-                    <form action ="script_commande.php" class="" method="post">
+                    <div class="col-lg-6">
+                        <?php foreach ($resultat as $info): ?>
+                            <!-- affichage des noms du plat -->
+                            <div CLASS="d-flex justify-content-center my-2"> 
+                                <h5 class="card-title" style="text-align:center"><h5><?= $info->libelle?></h5>
+                            </div>
+                            <!-- partie inférieure avec l'image -->
+                            <img src="/assets/images_the_district/food/<?= $info->image?>" class="img-fluid card-img-top img_plat"  alt="jaquettes" height="300px" width="300px">
+                            <!-- affichage des noms du prix -->
+                            <p style="text-align:center" class="mt-4"><strong><?= $info->prix .' €'?></strong></p>
+                            <!-- affichage de la description -->
+                            <div class="row descr">
+                                <p style="text-align:center"><?= $info->description?></p>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <div class="col-lg-6 my-auto">
+                        
+                        <!-- <div class="col-3 d-flex justify-content-center mx-auto my-5 cat_count rounded p-3">  
+                            <h1>Commande</h1>
+                        </div> -->
 
                         <div class="d-flex justify-content-between">
                             <div class="mx-2">
@@ -99,7 +100,7 @@ include("header.php");
 
                             </div>
                         </div>
-     
+    
                         <div class="d-flex justify-content-between my-5">
                             <div class="">
                                 <label for="nom"><h5>Nom & Prénom :</h5></label>
@@ -145,15 +146,15 @@ include("header.php");
                                 <input type="text" class="my-2" name="tel" id="form">
                             </div>
                         </div> 
-                    </form>
-                </div>
+                    </div>
 
-                <div class="col-12 d-flex justify-content-center my-5">
-                    <input class="btn btn-primary col-2 mx-5 btn_comm" type="submit" value="Confirmer">
-                    <a class="btn btn-primary col-2 mx-5 btn_comm" href="plat_list.php?id=<?=$info->id?>">Retour</a>
-                </div>
+                    <div class="col-12 d-flex justify-content-center my-5">
+                        <input class="btn btn-primary col-2 mx-5 btn_comm" type="submit" value="Confirmer">
+                        <a class="btn btn-primary col-2 mx-5 btn_comm" href="plat_list.php?id=<?=$info->id?>">Retour</a>
+                    </div>
 
-            </div> 
+                </div> 
+            </form>
         </div> 
     </div>
 

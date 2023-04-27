@@ -1,16 +1,10 @@
 <?php
-include "db.php";
-$db = connexionBase();
+// Header (banière / logo) :
+include("header.php"); 
 
-include "header.php";
+include "DAO.php";
 
- // foreach plats
- $requete = $db->query
-
- ("SELECT libelle, plat.image, id_categorie FROM plat WHERE active = 'Yes' limit 9");
-
- $resultat = $requete->fetchAll(PDO::FETCH_OBJ);
- $requete->closeCursor();
+$plat = plat();
 
 ?>
 
@@ -19,11 +13,11 @@ include "header.php";
     <div class="container col-7 div_cat mt-5 py-5">
         
         <div class="col-4 d-flex justify-content-around mx-auto my-5 cat_count rounded p-3">  
-            <h1>Nos plats (<?=count($resultat)?>)</h1>
+            <h1>Nos plats (<?=count($plat)?>)</h1>
         </div>
 
         <div class="d-flex flex-wrap liste_cat">
-            <?php foreach ($resultat as $infos): ?>
+            <?php foreach ($plat as $infos): ?>
 
                 <div class="card liste-cat m-auto my-3" id="card" style="width: 18rem;">
                     <div class="card-body p-2">
