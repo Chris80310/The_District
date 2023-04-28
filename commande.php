@@ -17,9 +17,7 @@ include("header.php");
 
 ?>
 
-<body>
-
-    
+<body>    
     <div class="card liste-cat m-auto my-5" id="cmde" style="width: 50rem">
         <div class="col-12 card-body p-1">
 
@@ -49,17 +47,14 @@ include("header.php");
                     </div>
 
                     <div class="col-lg-6 my-auto">
-                        
-                        <!-- <div class="col-3 d-flex justify-content-center mx-auto my-5 cat_count rounded p-3">  
-                            <h1>Commande</h1>
-                        </div> -->
-
                         <div class="d-flex justify-content-between">
+
                             <div class="mx-2">
                                 <label for="qte"><h5>Quantité: </h5></label>
                                 <br>
-                                <label for="prix"><h5>Prix: </h5></label>
+                                <label for="total"><h5>Total: </h5></label>
                             </div>
+
                             <div class="">
                                 <!-- Select quantité : -->
                                 <select class="mx-2" name="qte" id="qte">
@@ -77,11 +72,10 @@ include("header.php");
                                 }
                                 </script>
 
-                                <!-- Prix : -->
+                                <!-- Prix total: -->
                                 <div class="d-flex justify-content-between my-2">
-                                    <input type="text" id="prix" name="prix" value="<?=$info->prix?>" readonly>
+                                    <input type="text" id="total" name="total" value="<?=$info->prix?>" readonly>
                                 </div>
-                            
                                 <!-- Script pour le prix total : -->
                                 <script>
                                         var prixElement = document.getElementById("prix");
@@ -115,7 +109,7 @@ include("header.php");
                                 <label for="url_label"><h5>Adresse :</h5></label>
                             </div>
                             <div class="">
-                                <input type="text" class="" name="adresse" id="form" placeholder=" Numéro de porte & rue ...">
+                                <input type="text" class="" name="adr" id="form" placeholder=" Numéro de porte & rue ...">
                             </div>
                         </div>  
 
@@ -148,16 +142,17 @@ include("header.php");
                         </div> 
                     </div>
 
+                    <input name="id" type="hidden" value="<?=$info->id?>">
+
                     <div class="col-12 d-flex justify-content-center my-5">
-                        <input class="btn btn-primary col-2 mx-5 btn_comm" type="submit" value="Confirmer">
-                        <a class="btn btn-primary col-2 mx-5 btn_comm" href="plat_list.php?id=<?=$info->id?>">Retour</a>
+                        <input class="btn btn-primary col-2 mx-5 btn_comm" href="plat_list.php?id=<?=$info->id?>" type="submit" value="Confirmer">
+                        <a class="btn btn-primary col-2 mx-5 btn_comm">Retour</a>
                     </div>
 
                 </div> 
             </form>
         </div> 
     </div>
-
 </body>
 
 <?php

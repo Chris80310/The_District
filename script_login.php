@@ -1,24 +1,23 @@
 <?php
 
+require "login.php";
+
 var_dump($_REQUEST);
 
-    $nom   = (isset($_REQUEST['nom']) && $_REQUEST['nom'] !== "") ? $_REQUEST['nom'] : Null;
-    $prenom    = (isset($_REQUEST['prenom']) && $_REQUEST['prenom'] !== "") ? $_REQUEST['prenom']  : Null;
     $email   = (isset($_REQUEST['email']) && $_REQUEST['email'] != "") ? $_REQUEST['email'] : Null;
-    $tel   = (isset($_REQUEST['tel']) && $_REQUEST['tel'] != "") ? $_REQUEST['tel'] : Null;
-    $message   = (isset($_REQUEST['mess']) && $_REQUEST['mess'] != "") ? $_REQUEST['mess'] : Null;
+    $mdp   = (isset($_REQUEST['mdp']) && $_REQUEST['mdp'] !== "") ? $_REQUEST['mdp'] : Null;
     $Confirmer = (isset($_REQUEST['Confirmer']));
 
     // En cas d'erreur, on renvoie vers le formulaire
-if ($nom == Null || $prenom == Null || $email == Null || $tel == Null) {
-    header("Location: contact_form.php");
+if ($mdp == Null || $email == Null) {
+    header("Location: login.php");
     exit;
 }
 
 if(isset($Confirmer)){
     if($email == 'email' && $mdp == "123"){
         $_session["autoriser"]="oui";
-        header("login_form.php");
+        header("login.php");
     }
     else{
         echo"Mauvais identifiant ou mot de passe";

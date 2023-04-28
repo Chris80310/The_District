@@ -36,6 +36,9 @@
                         <li class="nav-item mx-5">
                             <a class="nav-link" style="color:white" href="contact_form.php"><span><strong>Contact</strong></span></a>
                         </li>
+                        <li class="nav-item mx-5">
+                            <a class="nav-link" style="color:white" name="connect" id="connect" href="login.php"><span><strong>Connexion</strong></span></a>
+                        </li>
                     </ul>
                     <div class="col d-flex justify-content-center input-group p-0">
                         <input id="oSaisie" name="oSaisie" type="text" aria-label="Saisie de mots clés" placeholder="Mot(s) clé(s)" required="required">
