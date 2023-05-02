@@ -1,45 +1,55 @@
 <?php
 
-require "login.php";
+session_start();
 
 var_dump($_REQUEST);
 
     $email   = (isset($_REQUEST['email']) && $_REQUEST['email'] != "") ? $_REQUEST['email'] : Null;
     $mdp   = (isset($_REQUEST['mdp']) && $_REQUEST['mdp'] !== "") ? $_REQUEST['mdp'] : Null;
-    $Confirmer = (isset($_REQUEST['Confirmer']));
+    $confirmer = (isset($_REQUEST['confirmer']));
+
+    var_dump($confirmer);
 
     // En cas d'erreur, on renvoie vers le formulaire
 if ($mdp == Null || $email == Null) {
-    header("Location: login.php");
+    header("login.php");
     exit;
 }
 
-if(isset($Confirmer)){
+if(isset($confirmer)){
     if($email == 'email' && $mdp == "123"){
-        $_session["autoriser"]="oui";
-        header("login.php");
+        $_SESSION["autoriser"]="oui";
+        header("index.php");
+        exit;
     }
     else{
-        echo"Mauvais identifiant ou mot de passe";
+        $_SESSION["log_err"]="Mauvais identifiant ou mot de passe";
     }
 }
-
-session_start();
-
 $_SESSION["login"] = "webmaster";
+$_SESSION["role"] = "admin";
 
-if ($_SESSION["login"]) 
+
+if (isset($_SESSION["login"]) ) 
 {
-   echo"Vous êtes autorisé à voir cette page.";  
-} 
-else 
-{
-   echo"Cette page nécessite une identification.";  
+    header("Location:index.php");
+    exit;
 }
 
-// S'il n'y a pas eu de redirection vers le formulaire (= si la vérification des données est ok) :
-    
-    require "db.php"; 
-    $db = connexionBase();
+// Reste du code (PHP/HTML)
+echo"Bonjour ".$_SESSION["login"]."<br>"; 
+
+// destruction des variables de session
+unset($_SESSION["login"]);
+unset($_SESSION["role"]);
+
+// la fonction setcookie(), nous permets de forcer la date d'expiration 
+if (ini_get("session.use_cookies")) 
+{
+    setcookie(session_name(), '', time()-42000);
+}
+
+// On détruit le reste de la session, via la fonction session_destroy()
+session_destroy();
 
 ?>

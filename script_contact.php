@@ -15,28 +15,28 @@ if ($nom == Null || $prenom == Null || $email == Null || $tel == Null) {
     exit;
 }
 
-if(isset($Confirmer)){
-    if($email == 'email' && $mdp == "123"){
-        $_session["autoriser"]="oui";
-        header("login_form.php");
-    }
-    else{
-        echo"Mauvais identifiant ou mot de passe";
-    }
-}
+// if(isset($Confirmer)){
+//     if($email == 'email' && $mdp == "123"){
+//         $_session["autoriser"]="oui";
+//         header("login_form.php");
+//     }
+//     else{
+//         echo"Mauvais identifiant ou mot de passe";
+//     }
+// }
 
-session_start();
+// session_start();
 
-$_SESSION["login"] = "webmaster";
+// $_SESSION["login"] = "webmaster";
 
-if ($_SESSION["login"]) 
-{
-   echo"Vous êtes autorisé à voir cette page.";  
-} 
-else 
-{
-   echo"Cette page nécessite une identification.";  
-}
+// if ($_SESSION["login"]) 
+// {
+//    echo"Vous êtes autorisé à voir cette page.";  
+// } 
+// else 
+// {
+//    echo"Cette page nécessite une identification.";  
+// }
 
 // S'il n'y a pas eu de redirection vers le formulaire (= si la vérification des données est ok) :
     
