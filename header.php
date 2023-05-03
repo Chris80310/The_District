@@ -36,9 +36,19 @@
                         <li class="nav-item mx-5">
                             <a class="nav-link" style="color:white" href="contact_form.php"><span><strong>Contact</strong></span></a>
                         </li>
-                        <li class="nav-item mx-5">
-                            <a class="nav-link" style="color:white" name="connect" id="connect" href="login.php"><span><strong>Connexion</strong></span></a>
-                        </li>
+
+                        <?php if (!isset($_SESSION['login'])) : ?>
+                            <li class="nav-item mx-5">
+                                <a class="nav-link" style="color:white" name="connect" id="connect" href="login.php"><span><strong>Connexion</strong></span></a>
+                            </li>
+                        <?php endif; ?>
+                        <?php if (isset($_SESSION['login'])) : ?>
+                            <li class="nav-item mx-5">
+                                <a class="nav-link" style="color:white" name="connect" id="connect" href="login.php"><span><strong>Admin</strong></span></a>
+                                <span class="">Connecté en tant que : <b><?= $_SESSION['login']?></b></span>
+                                <a class="btn btn-primary nav-link" href="deco.php" style="width:130px" name="connect" id="connect">Deconnexion</a>
+                            </li>
+                        <?php endif; ?>
                     </ul>
                     <div class="col d-flex justify-content-center input-group p-0">
                         <input id="oSaisie" name="oSaisie" type="text" aria-label="Saisie de mots clés" placeholder="Mot(s) clé(s)" required="required">
@@ -49,10 +59,5 @@
                 </div>
             </nav>
         </div>
-
-
     </header>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-
 

@@ -19,7 +19,7 @@ include("header.php");
 
 <body>    
     <div class="card liste-cat m-auto my-5" id="cmde" style="width: 50rem">
-        <div class="col-12 card-body p-1">
+        <div class="col-12 p-1">
 
             <form action ="script_commande.php" class="" method="post">
 

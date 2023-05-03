@@ -21,7 +21,7 @@ function connexionBase(){
 
         $pdo = new PDO('mysql:host='.$dbhost.';charset=utf8;dbname='.$db, $dbuser2, $dbpasswd2);
 
-        // OU ://
+        // OU : //
 
         // $pdo = new PDO('mysql:host='.$dbhost.';port='.$dbport.';dbname='.$db.';charset=utf8'.'', $dbuser, $dbpasswd); 
 

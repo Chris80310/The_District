@@ -1,7 +1,14 @@
 <body class="bg1">
 
     <?php
-    include "header.php"
+    // var_dump($_SESSION);
+
+    session_start();
+
+    // var_dump($_SESSION);
+
+    include "header.php";
+
     ?>
 
     <div class="container col-7 div_cat mt-5 py-5">
@@ -30,12 +37,12 @@
                     <div class="col-9">
                         <input type="password" class="col-8 form" name="mdp" id="mdp">
                         <br>
-                        <strong><small class="text-danger"><?php if(isset($_SESSION["log_err"])) {echo $_SESSION["mdp_err"];}?></small></strong>
+                        <strong><small class="text-danger"><?php if(isset($_SESSION["log_err"])) {echo $_SESSION["log_err"];}?></small></strong>
                     </div>
                 </div>   
 
                 <div class="col-12 d-flex justify-content-center my-5">
-                    <input class="btn btn-primary col-2 mx-5 mt-3 btn_form" type="submit" value="confirmer">
+                    <input class="btn btn-primary col-2 mx-5 mt-3 btn_form" type="submit" name="confirmer" value="Confirmer">
                     <a class="btn btn-primary col-2 mx-5 mt-3 btn_form2" href="index.php">Retour</a>
                 </div>
             </div>
