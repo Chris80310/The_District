@@ -27,7 +27,7 @@ $confirmer  = (isset($_REQUEST['id']) && $_REQUEST['id'] != "") ? $_REQUEST['id'
 // Autre méthode, le ternaire :
 
 // if(isset($_REQUEST['id'])){
-//     $confirmer = $_REQUEST['id'];
+// $confirmer = $_REQUEST['id'];
 // }
 
 require "db.php";

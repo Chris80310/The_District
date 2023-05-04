@@ -160,6 +160,7 @@ input.btn_comm:hover,input.btn_form:hover,
 
 /* Formulaire contact : */
 .form{
+    border-width: 5px;
     border-color: purple;
-    border-radius: 6px;
+    border-radius: 10px;
 }
