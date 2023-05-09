@@ -86,7 +86,7 @@ h1{
 }
 
 /* Titre : */
-.cat_count{
+.cat_count,.titre{
     background-color: purple;
     color: white;
 }
@@ -136,7 +136,7 @@ label{
 
 /* Boutons formulaire : */
 
-input.btn_form,a.btn_form2{
+input.btn_form,a.btn_form2, a.btn{
     background: purple;
     color: white;
     border-color: purple;
@@ -163,4 +163,16 @@ input.btn_comm:hover,input.btn_form:hover,
     border-width: 5px;
     border-color: purple;
     border-radius: 10px;
+}
+
+/* btn admin : */
+.btn_admin{
+    border-width: 5px;
+    border-color: purple;
+    border-radius: 10px;
+}
+
+.bg_admin{
+    background-color: rgba(0, 0, 0, 0.507);
+    color: white;
 }

@@ -1,9 +1,8 @@
-
-<!-- HEADER : -->
 <?php
     session_start();
 ?>
 
+<!-- HEADER : -->
 <?php 
     if (file_exists("header.php") ) 
     {

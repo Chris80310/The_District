@@ -26,7 +26,7 @@ INSERT INTO `categorie` (`id`, `libelle`, `image`, `active`) VALUES
 	(13, 'Salade', 'salade_cat.jpg', 'Yes'),
 	(14, 'Veggie', 'veggie_cat.jpg', 'Yes');
 
--- Listage des données de la table the_district.commande : ~8 rows (environ)
+-- Listage des données de la table the_district.commande : ~14 rows (environ)
 DELETE FROM `commande`;
 INSERT INTO `commande` (`id`, `id_plat`, `quantite`, `total`, `date_commande`, `etat`, `nom_client`, `telephone_client`, `email_client`, `adresse_client`) VALUES
 	(2, 4, 4, 16.00, '2020-11-30 03:52:43', 'Livrée', 'Kelly Dillard', '7896547800', 'kelly@gmail.com', '308 Post Avenue'),
@@ -36,21 +36,28 @@ INSERT INTO `commande` (`id`, `id_plat`, `quantite`, `total`, `date_commande`, `
 	(7, 10, 2, 8.00, '2021-07-20 06:40:21', 'En cours de livraison', 'Claudia Hedley', '7451114400', 'hedley@gmail.com', '1119 Kinney Street'),
 	(8, 14, 1, 6.00, '2021-07-20 06:40:57', 'En préparation', 'Vernon Vargas', '7414744440', 'venno@gmail.com', '1234 Hazelwood Avenue'),
 	(9, 9, 4, 20.00, '2021-07-20 07:06:06', 'Annulée', 'Carlos Grayson', '7401456980', 'carlos@gmail.com', '2969 Hartland Avenue'),
-	(10, 16, 4, 12.00, '2021-07-20 07:11:06', 'Livrée', 'Jonathan Caudill', '7410256996', 'jonathan@gmail.com', '1959 Limer Street');
+	(10, 16, 4, 12.00, '2021-07-20 07:11:06', 'Livrée', 'Jonathan Caudill', '7410256996', 'jonathan@gmail.com', '1959 Limer Street'),
+	(17, 12, 2, 480.00, '2023-04-28 10:46:29', 'En préparation', 'aaa bbb', '0637559252', 'tamer@travailtard.com', '27 rue cocombre'),
+	(18, 12, 2, 480.00, '2023-04-28 10:46:46', 'En préparation', 'aaa bbb', '0637559252', 'tamer@travailtard.com', '27 rue cocombre'),
+	(19, 12, 2, 480.00, '2023-04-28 10:47:55', 'En préparation', 'aaa bbb', '0637559252', 'tamer@travailtard.com', '27 rue cocombre'),
+	(20, 12, 4, 480.00, '2023-04-28 10:53:25', 'En préparation', 'aaa bbb', '0637559252', 'tamer@travailtard.com', '27 rue cocombre'),
+	(21, 12, 2, 10.00, '2023-04-28 10:57:48', 'En préparation', 'gggg hhhh', '0652914536', 'fépéter@tafemme.com', '36 rue du sboub'),
+	(22, 4, 2, 8.00, '2023-04-28 11:17:16', 'En préparation', 'ddd ffff', '03555778275', 'qqgdhd@hhfdwwed.com', '8882525ghghhs'),
+	(23, 12, 2, 10.00, '2023-04-28 11:27:19', 'J\'aime les queues', 'dfqfgg', '043737637837373', 'gdrhgddwh@gfdrsh.com', 'yykiuyk725');
 
 -- Listage des données de la table the_district.plat : ~10 rows (environ)
 DELETE FROM `plat`;
 INSERT INTO `plat` (`id`, `libelle`, `description`, `prix`, `image`, `id_categorie`, `active`) VALUES
 	(4, 'District Burger', 'Burger composé d’un bun’s du boulanger, deux steaks de 80g (origine française), de deux tranches poitrine de porc fumée, de deux tranches cheddar affiné, salade et oignons confits. .', 8.00, 'hamburger.jpg', 5, 'Yes'),
 	(5, 'Pizza Bianca', 'Une pizza fine et croustillante garnie de crème mascarpone légèrement citronnée et de tranches de saumon fumé, le tout relevé de baies roses et de basilic frais.', 14.00, 'pizza-salmon.png', 4, 'Yes'),
-	(9, 'Buffalo Chicken Wrap', 'Du bon filet de poulet mariné dans notre spécialité sucrée & épicée, enveloppé dans une tortilla blanche douce faite maison.', 5.00, 'buffalo-chicken.webp', 9, 'Yes'),
+	(9, 'Buffalo Chicken Wrap', 'Du bon filet de poulet mariné dans notre spécialité sucrée & épicée, enveloppé dans une tortilla blanche douce faite maison.', 5.00, 'buffalo-chicken.jpg', 9, 'Yes'),
 	(10, 'Cheeseburger', 'Burger composé d’un bun’s du boulanger, de salade, oignons rouges, pickles, oignon confit, tomate, d’un steak d’origine Française, d’une tranche de cheddar affiné, et de notre sauce maison.', 8.00, 'cheesburger.jpg', 5, 'Yes'),
 	(12, 'Spaghetti aux légumes', 'Un plat de spaghetti au pesto de basilic et légumes poêlés, très parfumé et rapide', 10.00, 'spaghetti-legumes.jpg', 10, 'Yes'),
 	(13, 'Salade César', 'Une délicieuse salade Caesar (César) composée de filets de poulet grillés, de feuilles croquantes de salade romaine, de croutons à l ail, de tomates cerise et surtout de sa fameuse sauce Caesar. Le tout agrémenté de copeaux de parmesan.', 7.00, 'cesar_salad.jpg', 13, 'Yes'),
 	(14, 'Pizza Margherita', 'Une authentique pizza margarita, un classique de la cuisine italienne! Une pâte faite maison, une sauce tomate fraîche, de la mozzarella Fior di latte, du basilic, origan, ail, sucre, sel & poivre...', 14.00, 'pizza-margherita.jpg', 4, 'Yes'),
-	(15, 'Courgettes farcies au quinoa et duxelles de champignons', 'Voici une recette équilibrée à base de courgettes, quinoa et champignons, 100% vegan et sans gluten!', 8.00, 'courgettes_farcies.jpg', 14, 'Yes'),
+	(15, 'Courgettes farcies', 'Voici une recette équilibrée à base de courgettes, quinoa et champignons, 100% vegan et sans gluten!', 8.00, 'courgettes_farcies.jpg', 14, 'Yes'),
 	(16, 'Lasagnes', 'Découvrez notre recette des lasagnes, l une des spécialités italiennes que tout le monde aime avec sa viande hachée et gratinée à l emmental. Et bien sûr, une inoubliable béchamel à la noix de muscade.', 12.00, 'lasagnes_viande.jpg', 10, 'Yes'),
-	(17, 'Tagliatelles au saumon', 'Découvrez notre recette délicieuse de tagliatelles au saumon frais et à la crème qui qui vous assure un véritable régal!', 12.00, 'tagliatelles_saumon.webp', 10, 'Yes');
+	(17, 'Tagliatelles au saumon', 'Découvrez notre recette délicieuse de tagliatelles au saumon frais et à la crème qui qui vous assure un véritable régal!', 12.00, 'tagliatelles-saumon.jpg', 10, 'Yes');
 
 -- Listage des données de la table the_district.utilisateur : ~0 rows (environ)
 DELETE FROM `utilisateur`;

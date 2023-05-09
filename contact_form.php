@@ -47,7 +47,7 @@ include "header.php"
                         <label for="tel_label"><h5>Numéro de téléphone :</h5></label> <br>
                     </div>  
                     <div class="col-9">
-                        <input type="password" class="col-8 form" name="tel" id="form">
+                        <input type="number" class="col-8 form" name="tel" id="form">
                     </div>
                 </div> 
 
@@ -56,12 +56,12 @@ include "header.php"
                         <label for="txt_label"><h5>Votre message :</h5></label> <br>
                     </div>  
                     <div class="col-9">
-                        <textarea name="" id="" cols="20" rows="10" class="col-8 form" name="mess" id="form" placeholder=" Votre message ici"></textarea>
+                        <textarea cols="20" rows="10" class="col-8 form" name="mess" id="form" placeholder=" Votre message ici"></textarea>
                     </div>
                 </div> 
 
                 <div class="col-12 d-flex justify-content-center my-5">
-                    <input class="btn btn-primary col-2 mx-5 mt-3 btn_form" type="submit" value="Confirmer">
+                    <input class="btn btn-primary col-2 mx-5 mt-3 btn_form" type="submit" name="Confirmer" value="Confirmer">
                     <a class="btn btn-primary col-2 mx-5 mt-3 btn_form2" href="index.php">Retour</a>
                 </div>
             </div>

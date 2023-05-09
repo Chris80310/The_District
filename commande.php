@@ -78,7 +78,7 @@ include("header.php");
                                 </div>
                                 <!-- Script pour le prix total : -->
                                 <script>
-                                        var prixElement = document.getElementById("prix");
+                                        var prixElement = document.getElementById("total");
                                         var prixInitial = prixElement.value;
                                         var numbersElement = document.getElementById("qte");
                                         numbersElement.addEventListener("change", function() {
@@ -146,7 +146,7 @@ include("header.php");
 
                     <div class="col-12 d-flex justify-content-center my-5">
                         <input class="btn btn-primary col-2 mx-5 btn_comm" href="plat_list.php?id=<?=$info->id?>" type="submit" value="Confirmer">
-                        <a class="btn btn-primary col-2 mx-5 btn_comm">Retour</a>
+                        <a class="btn btn-primary col-2 mx-5 btn_comm" href="plats.php">Retour</a>
                     </div>
 
                 </div> 

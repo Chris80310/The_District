@@ -44,7 +44,7 @@
                         <?php endif; ?>
                         <?php if (isset($_SESSION['login'])) : ?>
                             <li class="nav-item mx-5">
-                                <a class="nav-link" style="color:white" name="connect" id="connect" href="login.php"><span><strong>Admin</strong></span></a>
+                                <a class="nav-link" style="color:white" name="connect" id="connect" href="admin.php"><span><strong>Admin</strong></span></a>
                                 <span class="">Connecté en tant que : <b><?= $_SESSION['login']?></b></span>
                                 <a class="btn btn-primary nav-link" href="deco.php" style="width:130px" name="connect" id="connect">Deconnexion</a>
                             </li>
