@@ -11,9 +11,13 @@ $nom   = (isset($_REQUEST['nom']) && $_REQUEST['nom'] !== "") ? $_REQUEST['nom']
 $email   = (isset($_REQUEST['email']) && $_REQUEST['email'] != "") ? $_REQUEST['email'] : Null;
 $tel   = (isset($_REQUEST['tel']) && $_REQUEST['tel'] != "") ? $_REQUEST['tel'] : Null;
 $adresse   = (isset($_REQUEST['adr']) && $_REQUEST['adr'] != "") ? $_REQUEST['adr'] : Null;
-$cp   = (isset($_REQUEST['cp']) && $_REQUEST['cp'] != "") ? $_REQUEST['cp'] : Null;
 $total  = (isset($_REQUEST['total']) && $_REQUEST['total'] != "") ? $_REQUEST['total'] : Null;
+// $cp   = (isset($_REQUEST['cp']) && $_REQUEST['cp'] != "") ? $_REQUEST['cp'] : Null;
+// $ville   = (isset($_REQUEST['ville']) && $_REQUEST['ville'] != "") ? $_REQUEST['ville'] : Null;
+
 $confirmer  = (isset($_REQUEST['id']) && $_REQUEST['id'] != "") ? $_REQUEST['id'] : Null;
+$to = 'info@the_district.com';
+$from = 'email' .$email;
 
 // Explications : 
 

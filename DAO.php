@@ -102,7 +102,7 @@ function all_from_plat(){
 // }
 
 // Lire avec id
-function o_display_plat($id){
+function id_plat($id){
     $db = connexionBase();
     $query = $db->prepare('SELECT * FROM plat WHERE id_plat = ?;');
     $query->execute(array($id));
@@ -205,7 +205,7 @@ function all_from_cat(){
 }
 
 // Lire avec id
-function o_display_cat($id){
+function id_cat($id){
     $db = connexionBase();
     $query = $db->prepare('SELECT * FROM categorie WHERE id_categorie = ?;');
     $query->execute(array($id));
@@ -263,7 +263,7 @@ function all_from_com(){
 }
 
 // All from commande by id
-function o_display_com($id){
+function id_com($id){
     $db = connexionBase();
     $query = $db->prepare('SELECT * FROM commande WHERE id_commande = ?;');
     $query->execute(array($id));
@@ -334,7 +334,7 @@ function all_from_usr(){
     return $tab;
 }
 // READ ONE WITH ID PARAMETER
-function o_display_usr($id){
+function id_usr($id){
     $db = connexionBase();
     $query = $db->prepare('SELECT * FROM utilisateur WHERE id_utilisateur = ?;');
     $query->execute(array($id));

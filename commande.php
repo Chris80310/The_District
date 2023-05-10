@@ -36,7 +36,7 @@ include("header.php");
                                 <h5 class="card-title" style="text-align:center"><h5><?= $info->libelle?></h5>
                             </div>
                             <!-- partie inférieure avec l'image -->
-                            <img src="/assets/images_the_district/food/<?= $info->image?>" class="img-fluid card-img-top img_plat"  alt="jaquettes" height="300px" width="300px">
+                            <img src="/assets/images_the_district/food/<?= $info->image?>" class="img-fluid card-img-top img_plat"  alt="" height="300px" width="300px">
                             <!-- affichage des noms du prix -->
                             <p style="text-align:center" class="mt-4"><strong><?= $info->prix .' €'?></strong></p>
                             <!-- affichage de la description -->
@@ -115,11 +115,11 @@ include("header.php");
 
                         <div class="d-flex justify-content-between my-5">
                             <div class="">
-                                <label for="ville"><h5>Ville & code postal :</h5></label>
+                                <label for="ville"><h5>code postal & Ville :</h5></label>
                             </div>
                             <div class="">
                                 <input type="text" class="mb-2" name="ville" id="form" placeholder=" Ville">
-                                <input type="text" class="" name="cp" id="form" placeholder=" Code postal">
+                                <!-- <input type="text" class="" name="cp" id="form" placeholder=" Code postal"> -->
                             </div>
                         </div> 
                         

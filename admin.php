@@ -1,8 +1,9 @@
 <?php
 
+include "header.php";
+
 if (session_status() !== PHP_SESSION_ACTIVE) session_start();
 
-include "header.php";
 ?>
 
 <!DOCTYPE html>
@@ -16,20 +17,22 @@ include "header.php";
            
             <?php if (isset($_SESSION['login'])) : ?>
             <nav>
-                <h1 class="text-center my-5">Administration</h1>
+                <div class="col-4 d-flex justify-content-center m-auto my-5 cat_count rounded">
+                    <h1 class="text-center text-white my-5">Administration</h1>
+                </div>
                 <div class="d-flex row mt-5 mb-5 rounded mnb">
                     <ul class="navbar-nav ms-md-auto me-md-5">
                         <li class="nav-item mx-4 d-flex justify-content-center">
                             <a class="nav-link text-white" href="admin_cat.php">Gestion catégories</a>
                         </li>
                         <li class="nav-item mx-4 d-flex justify-content-center">
-                            <a class="nav-link text-white" href="?page=admin_plat.php">Gestion plats</a>
+                            <a class="nav-link text-white" href="admin_plat.php">Gestion plats</a>
                         </li>
                         <li class="nav-item mx-4 d-flex justify-content-center">
-                            <a class="nav-link text-white" href="?page=admin_com.php">Gestion commandes</a>
+                            <a class="nav-link text-white" href="admin_com.php">Gestion commandes</a>
                         </li>
                         <li class="nav-item mx-4 d-flex justify-content-center">
-                            <a class="nav-link text-white" href="?page=admin_util.php">Gestion utilisateurs</a>
+                            <a class="nav-link text-white" href="admin_util.php">Gestion utilisateurs</a>
                         </li>
                     </ul>
                 </div>

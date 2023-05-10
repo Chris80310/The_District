@@ -13,7 +13,7 @@ $to = 'info@the_district.com';
 $from = 'email' .$email;
 
 // En cas d'erreur, on renvoie vers le formulaire :
-if ($nom == Null || $nom == Null|| $email == Null || $tel == Null || $message == Null){
+if ($nom == Null|| $email == Null || $tel == Null || $message == Null){
     header("Location: contact_form.php");
     exit;
 }
