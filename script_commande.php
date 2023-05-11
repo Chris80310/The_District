@@ -5,7 +5,6 @@
 date_default_timezone_set('Europe/Paris');
 $date = date("Y-m-d H-i-s");
 $etat = "En préparation";
-
 $quantite  = (isset($_REQUEST['qte']) && $_REQUEST['qte'] !== "") ? $_REQUEST['qte'] : Null;
 $nom   = (isset($_REQUEST['nom']) && $_REQUEST['nom'] !== "") ? $_REQUEST['nom'] : Null;
 $email   = (isset($_REQUEST['email']) && $_REQUEST['email'] != "") ? $_REQUEST['email'] : Null;
@@ -14,10 +13,16 @@ $adresse   = (isset($_REQUEST['adr']) && $_REQUEST['adr'] != "") ? $_REQUEST['ad
 $total  = (isset($_REQUEST['total']) && $_REQUEST['total'] != "") ? $_REQUEST['total'] : Null;
 // $cp   = (isset($_REQUEST['cp']) && $_REQUEST['cp'] != "") ? $_REQUEST['cp'] : Null;
 // $ville   = (isset($_REQUEST['ville']) && $_REQUEST['ville'] != "") ? $_REQUEST['ville'] : Null;
-
+$libelle = (isset($_REQUEST['libelle']) && $_REQUEST['libelle'] != "") ? $_REQUEST['libelle'] : Null;
 $confirmer  = (isset($_REQUEST['id']) && $_REQUEST['id'] != "") ? $_REQUEST['id'] : Null;
 $to = 'info@the_district.com';
 $from = 'email' .$email;
+$sujet = "District.com : Votre commande";
+$message = "Vous avez commandé " .$quantite. " plats " .$libelle. " pour un total de " .$total. " au nom de " .$nom. " à l'adresse suivante : " .$adresse;
+
+mail($to, $sujet, $message);
+
+exit;
 
 // Explications : 
 
@@ -37,8 +42,8 @@ $from = 'email' .$email;
 require "db.php";
 $db = connexionBase();
 
-var_dump($confirmer);
-var_dump($_POST);
+// var_dump($confirmer);
+// var_dump($_POST);
 
 try {
     // Construction de la requête INSERT sans injection SQL :

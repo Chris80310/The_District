@@ -86,7 +86,7 @@ h1{
 }
 
 /* Titre : */
-.cat_count,.titre{
+.cat_count,.titre,.txt{
     background-color: purple;
     color: white;
 }

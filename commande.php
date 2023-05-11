@@ -34,6 +34,7 @@ include("header.php");
                             <!-- affichage des noms du plat -->
                             <div CLASS="d-flex justify-content-center my-2"> 
                                 <h5 class="card-title" style="text-align:center"><h5><?= $info->libelle?></h5>
+                                <input type="hidden" name="libelle" value="<?= $info->libelle?>">
                             </div>
                             <!-- partie inférieure avec l'image -->
                             <img src="/assets/images_the_district/food/<?= $info->image?>" class="img-fluid card-img-top img_plat"  alt="" height="300px" width="300px">

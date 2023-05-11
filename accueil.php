@@ -55,8 +55,7 @@ $res2 = $tab[1];
                         <img src="assets/images_the_district/food/<?= $infos2->image?>" class="card-img-top img-responsive" alt="image"></a>
                         <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->   
                     </div>
-                </div>
-                
+                </div>     
             <?php endforeach; ?>
         </div>
 
