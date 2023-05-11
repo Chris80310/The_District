@@ -55,12 +55,12 @@ include "header.php"
         <p>
 
         <a href="confid.php">Cliquez ici pour accéder aux CGV</a>
-        
+        <br><br>
+        <a href="contact_form.php">Contactez-nous</a>
         <p>
-        Contactez-nous
         © 2023. Tous droits réservés The District.
         </p>
-            
+
     </div>
 
 </body>
