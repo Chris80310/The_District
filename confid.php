@@ -75,7 +75,6 @@ include "header.php"
             <h3 class="my-5">2. Partage des données</h3>
 
         <p>
-
             Nous nous assurons toujours d’avoir mis en place la sécurité maximale, et le cas échéant les garanties contractuelles appropriées pour protéger vos données personnelles avant de les partager. Nous pouvons partager vos données personnelles avec les destinataires suivants :
 
             Les clients : ils passent commande, dans le cadre de nos services, auprès de votre Restaurant.
@@ -102,13 +101,13 @@ include "header.php"
             Nous pouvons, à tout moment et sans que vous en soyez préalablement informé, mettre à jour cette Politique de Confidentialité, pour plusieurs raisons : modifications légales, techniques, commerciales par exemple. Nous vous encourageons donc à consulter régulièrement cette page afin de vous tenir informé de sa mise à jour, des dernières informations sur notre Politique de Confidentialité.
             <h3 class="my-5">9. Coordonnées pour nous contacter</h3>
 
-            Pour toute question, demande d’informations supplémentaires, ou préoccupation concernant notre Politique de Confidentialité ou nos services, vous pouvez nous contacter sur : alex@The District.fr.
-            Contactez-nous
+            Pour toute question, demande d’informations supplémentaires, ou préoccupation concernant notre Politique de Confidentialité ou nos services, vous pouvez nous contacter sur : info@The District.fr.
+            <br>
+            <a href="contact_form.php">Contactez-nous</a>
+            <br><br>
             © 2023. Tous droits réservés The District.
-            CGV
-            Mentions légales
-            Politique de confidentialité
-
+            <br>
+            <a href="mentions.php">Mentions légales</a>  
         </p>  
     </div>
 

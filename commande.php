@@ -51,14 +51,14 @@ include("header.php");
                         <div class="d-flex justify-content-between">
 
                             <div class="mx-2">
-                                <label for="qte"><h5>Quantité: </h5></label>
-                                <br>
-                                <label for="total"><h5>Total: </h5></label>
+                                <label class="my-3" for="qte"><h5>Quantité: </h5></label>
+                            
+                                <label class="my-3" for="total"><h5>Total: </h5></label>
                             </div>
 
                             <div class="">
                                 <!-- Select quantité : -->
-                                <select class="mx-2" name="qte" id="qte">
+                                <select class="mx-2 my-3" name="qte" id="qte">
                                     <option value="" name="option" id="option">Choisir </option>
                                 </select>
 
@@ -74,7 +74,7 @@ include("header.php");
                                 </script>
 
                                 <!-- Prix total: -->
-                                <div class="d-flex justify-content-between my-2">
+                                <div class="d-flex justify-content-between my-3">
                                     <input type="text" id="total" name="total" value="<?=$info->prix?>" readonly>
                                 </div>
                                 <!-- Script pour le prix total : -->
