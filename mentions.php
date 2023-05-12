@@ -57,6 +57,7 @@ include "header.php"
         <a href="confid.php">Cliquez ici pour accéder aux CGV</a>
         <br><br>
         <a href="contact_form.php">Contactez-nous</a>
+        <br><br>
         <p>
         © 2023. Tous droits réservés The District.
         </p>

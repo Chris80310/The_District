@@ -15,6 +15,11 @@ $total  = (isset($_REQUEST['total']) && $_REQUEST['total'] != "") ? $_REQUEST['t
 // $ville   = (isset($_REQUEST['ville']) && $_REQUEST['ville'] != "") ? $_REQUEST['ville'] : Null;
 $libelle = (isset($_REQUEST['libelle']) && $_REQUEST['libelle'] != "") ? $_REQUEST['libelle'] : Null;
 $confirmer  = (isset($_REQUEST['id']) && $_REQUEST['id'] != "") ? $_REQUEST['id'] : Null;
+
+if (!isset($_request['id'])){
+    header("Location: index.php");
+}
+
 $to = 'info@the_district.com';
 $from = 'email' .$email;
 $sujet = "District.com : Votre commande";
