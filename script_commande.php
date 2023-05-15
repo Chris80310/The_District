@@ -16,9 +16,9 @@ $total  = (isset($_REQUEST['total']) && $_REQUEST['total'] != "") ? $_REQUEST['t
 $libelle = (isset($_REQUEST['libelle']) && $_REQUEST['libelle'] != "") ? $_REQUEST['libelle'] : Null;
 $confirmer  = (isset($_REQUEST['id']) && $_REQUEST['id'] != "") ? $_REQUEST['id'] : Null;
 
-if (!isset($_request['id'])){
-    header("Location: index.php");
-}
+// if (!isset($_request['id'])){
+//     header("Location: index.php");
+// }
 
 $to = 'info@the_district.com';
 $from = 'email' .$email;
@@ -35,7 +35,7 @@ exit;
 // (isset($_REQUEST['id']) = Si elle existe
 // && = et
 // $_REQUEST['id'] != "") = et qu'elle n'est pas vide
-// ? = alors elle prends la valeur $_REQUEST['id'] 
+// ? = alors elle prends la valeur $_REQUEST['XXX'] 
 // : NULL = sinon elle prends la valeur Null
 
 // Autre méthode, le ternaire :

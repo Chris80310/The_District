@@ -61,14 +61,11 @@ function plat(){
 
     // foreach plats
     $requete = $db->query
-
     ("SELECT libelle, plat.image, id_categorie FROM plat WHERE active = 'Yes' limit 9");
-
     $plat = $requete->fetchAll(PDO::FETCH_OBJ);
     $requete->closeCursor();
-
     return $plat;
-}
+    }
 
 // CREATE
 function create_plat($libelle,$description,$prix,$image,$id_categorie){
@@ -89,17 +86,6 @@ function all_from_plat(){
     $query->closeCursor();
     return $tab;
 }
-
-
-// function j_plat_cat(){
-//     $db = connexionBase();
-//     $query = $db->query('SELECT id_plat, plat.libelle, description, prix, plat.image, categorie.libelle AS libcat, plat.active FROM plat
-//     JOIN categorie ON plat.id_categorie = categorie.id_categorie ORDER BY libcat;');
-//     $query->execute();
-//     $tab = $query->fetchAll(PDO::FETCH_OBJ);
-//     $query->closeCursor();
-//     return $tab;
-// }
 
 // Lire avec id
 function id_plat($id){
@@ -149,7 +135,6 @@ function delete_plat($id){
 
 function details_plats(){ 
     
-    // require "db.php";
     $db = connexionBase();
     // $id = $_GET["id"];
 
@@ -333,7 +318,7 @@ function all_from_usr(){
     $query->closeCursor();
     return $tab;
 }
-// READ ONE WITH ID PARAMETER
+// READ WITH ID
 function id_usr($id){
     $db = connexionBase();
     $query = $db->prepare('SELECT * FROM utilisateur WHERE id_utilisateur = ?;');
@@ -364,16 +349,16 @@ function delete_user($id){
 
 //*********************** Commande utilisateur ***************************//
 
-function new_order($plat,$qtt,$tot,$nom,$tel,$email,$adr){
+function new_order($plat,$qte,$tot,$nom,$tel,$email,$adr){
     $db = connexionBase();
     $etat = "En préparation";
     $date = date('Y-m-d H:i:s');
     $query = $db->prepare('INSERT INTO commande (id_plat,quantite,total,date_commande,etat,nom_client,telephone_client,email_client,adresse_client)
-    VALUES (:plat,:qtt,:tot,:dt,:etat,:nom,:tel,:email,:adr);');
+    VALUES (:plat,:qte,:tot,:date,:etat,:nom,:tel,:email,:adr);');
     $query->bindValue(":plat", $plat, PDO::PARAM_STR);
-    $query->bindValue(":qtt", $qtt, PDO::PARAM_STR);
+    $query->bindValue(":qte", $qte, PDO::PARAM_STR);
     $query->bindValue(":tot", $tot, PDO::PARAM_STR);
-    $query->bindValue(":dt", $date, PDO::PARAM_STR);
+    $query->bindValue(":date", $date, PDO::PARAM_STR);
     $query->bindValue(":etat", $etat, PDO::PARAM_STR);
     $query->bindValue(":nom", $nom, PDO::PARAM_STR);
     $query->bindValue(":tel", $tel, PDO::PARAM_STR);

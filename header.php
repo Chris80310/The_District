@@ -17,7 +17,7 @@
     <header class="bg_header">
 
         <div class="container-fluid p-0">
-            <div class="col d-flex div_header img-responsive">
+            <div class="col d-flex div_header img-fluid">
                 <!-- banière / logo :  --> 
                 <img src="/assets/images_the_district/the_district_brand/logo_transparent.png" height="300px">
             </div>

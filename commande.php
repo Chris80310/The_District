@@ -101,7 +101,7 @@ include("header.php");
                                 <label for="nom"><h5>Nom & Prénom :</h5></label>
                             </div>
                             <div class="">
-                                <input type="text" class="my-2" name="nom" id="form">
+                                <input type="text" class="my-2" name="nom" id="form" required>
                             </div>
                         </div>
 
@@ -110,7 +110,7 @@ include("header.php");
                                 <label for="url_label"><h5>Adresse :</h5></label>
                             </div>
                             <div class="">
-                                <input type="text" class="" name="adr" id="form" placeholder=" Numéro de porte & rue ...">
+                                <input type="text" class="" name="adr" id="form" placeholder=" Numéro de porte & rue ..." required>
                             </div>
                         </div>  
 
@@ -119,7 +119,7 @@ include("header.php");
                                 <label for="ville"><h5>code postal & Ville :</h5></label>
                             </div>
                             <div class="">
-                                <input type="text" class="mb-2" name="ville" id="form" placeholder=" Ville">
+                                <input type="text" class="mb-2" name="ville" id="form" placeholder=" Ville" required>
                                 <!-- <input type="text" class="" name="cp" id="form" placeholder=" Code postal"> -->
                             </div>
                         </div> 
@@ -129,7 +129,8 @@ include("header.php");
                                 <label for="url_label"><h5>Mail :</h5></label>
                             </div>
                             <div class="">
-                                <input type="text" class="" name="email" id="form" placeholder=" Exemple@service.com">
+                                <input type="email" class="" name="email" id="form" placeholder=" Exemple@service.com" 
+                                required pattern="@([a-zA-Z0-9_.+-]+)\.[a-zA-Z0-9_.+-]">
                             </div>
                         </div>   
 
@@ -138,7 +139,7 @@ include("header.php");
                                 <label for="tel_label"><h5>Numéro de téléphone :</h5></label> <br>
                             </div>  
                             <div class="">
-                                <input type="text" class="my-2" name="tel" id="form">
+                                <input type="text" class="my-2" name="tel" id="form" required>
                             </div>
                         </div> 
                     </div>
