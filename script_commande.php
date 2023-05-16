@@ -1,6 +1,10 @@
 <?php
 
+session_start();
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+require_once 'vendor/autoload.php';
 
 date_default_timezone_set('Europe/Paris');
 $date = date("Y-m-d H-i-s");
@@ -15,17 +19,62 @@ $total  = (isset($_REQUEST['total']) && $_REQUEST['total'] != "") ? $_REQUEST['t
 // $ville   = (isset($_REQUEST['ville']) && $_REQUEST['ville'] != "") ? $_REQUEST['ville'] : Null;
 $libelle = (isset($_REQUEST['libelle']) && $_REQUEST['libelle'] != "") ? $_REQUEST['libelle'] : Null;
 $confirmer  = (isset($_REQUEST['id']) && $_REQUEST['id'] != "") ? $_REQUEST['id'] : Null;
+$id_plat= (isset($_REQUEST['id_plat']) && $_REQUEST['id_plat'] != "") ? $_REQUEST['id_plat'] : Null;
 
 // if (!isset($_request['id'])){
 //     header("Location: index.php");
 // }
 
-$to = 'info@the_district.com';
-$from = 'email' .$email;
+
+// var_dump($quantite);
+
+$from = 'info@theDistrict.com';
+$to = $email;
 $sujet = "District.com : Votre commande";
 $message = "Vous avez commandé " .$quantite. " plats " .$libelle. " pour un total de " .$total. " au nom de " .$nom. " à l'adresse suivante : " .$adresse;
 
-mail($to, $sujet, $message);
+$mail = new PHPMailer(true);
+
+// On va utiliser le SMTP
+$mail->isSMTP();
+
+// On configure l'adresse du serveur SMTP
+$mail->Host       = 'localhost';    
+
+// On désactive l'authentification SMTP
+$mail->SMTPAuth   = false;    
+
+// On configure le port SMTP (MailHog)
+$mail->Port       = 1025;                                   
+
+// Expéditeur du mail - adresse mail + nom (facultatif)
+$mail->setFrom($from, 'The District Company');
+
+$mail->addAddress($to, "Mr Client1");
+
+// Sujet du mail
+$mail->Subject = $sujet;
+
+// Corps du message
+$mail->Body = $message;
+
+// On envoie le mail dans un block try/catch pour capturer les éventuelles erreurs
+if ($mail){
+    try {
+        $mail->send();
+        // echo 'Email envoyé avec succès';
+        $_SESSION["confirmation"] = "Email envoyé avec succès";
+        header("Location: commande.php?id=".$id_plat);
+    } 
+    catch (Exception $e) {
+        echo "L'envoi de mail a échoué. L'erreur suivante s'est produite : ", $mail->ErrorInfo;
+    }
+}
+
+
+// mail($to, $sujet, $message);
+
+
 
 exit;
 

@@ -170,13 +170,32 @@ function get_categories(){
 }
 
 // CREATE
-function create_cat($lib,$img){
-    $active = "Yes";
-    $db = connexionBase();
-    $query = $db->prepare('INSERT INTO categorie (libelle,image,active) VALUES (?,?,?);');
-    $query->execute([$lib,$img,$active]);
-    $query->closeCursor();
-    return true;  
+function create_cat($libelle,$active,$picsName){
+    try {
+        $db = connexionBase();
+        // Construction de la requête INSERT sans injection SQL :
+        $requete = $db->prepare("INSERT INTO categorie (libelle, image, active) VALUES (:libelle, :picture, :active);");
+        
+        // Association des valeurs aux paramètres via bindValue() :
+        $requete->bindValue(":libelle", $libelle,   PDO::PARAM_STR);
+        $requete->bindValue(":active", $active,     PDO::PARAM_STR);
+        $requete->bindvalue(":picture", $picsName, PDO::PARAM_STR);
+        // Lancement de la requête :
+        $requete->execute();
+        // Libération de la requête (utile pour lancer d'autres requêtes par la suite) :
+        $requete->closeCursor();
+    
+        // Gestion des erreurs
+    } catch (Exception $e) {
+        var_dump($requete->queryString);
+        var_dump($requete->errorInfo());
+        echo "Erreur : " . $requete->errorInfo()[2] . "<br>";
+        die("Fin du script (index.php)");
+    }
+    // Si OK: redirection vers la page acceuil.php
+    header("Location: accueil.php");
+    // Fermeture du script
+    exit;
 }
 
 // All from categorie
@@ -199,21 +218,32 @@ function id_cat($id){
     return $tab;
 }
 
-// UPDATE
-function update_cat($id_categorie,$libelle,$img){
-    $active = "Yes";
-    $db = connexionBase();
-    $query = $db->prepare("UPDATE categorie SET 
-                libelle=:libelle, 
-                image=:image, 
-                active=:active
-            WHERE id_categorie=:id_categorie");
-    $query->bindValue(":libelle", $libelle, PDO::PARAM_STR);
-    $query->bindValue(":image", $img, PDO::PARAM_STR);
-    $query->bindValue(":active", $active, PDO::PARAM_STR);
-    $query->bindValue(":id_categorie", $id_categorie, PDO::PARAM_STR); 
-    $query->execute();
-    $query->closeCursor();
+function update_cat($libelle,$active,$picsName){
+    try {
+        $db = connexionBase();
+        // Construction de la requête INSERT sans injection SQL :
+        $requete = $db->prepare("UPDATE categorie SET libelle = :libelle, image = :picture, active = :active);");
+        
+        // Association des valeurs aux paramètres via bindValue() :
+        $requete->bindValue(":libelle", $libelle,   PDO::PARAM_STR);
+        $requete->bindValue(":active", $active,     PDO::PARAM_STR);
+        $requete->bindvalue(":picture", $picsName, PDO::PARAM_STR);
+        // Lancement de la requête :
+        $requete->execute();
+        // Libération de la requête (utile pour lancer d'autres requêtes par la suite) :
+        $requete->closeCursor();
+    
+        // Gestion des erreurs
+    } catch (Exception $e) {
+        var_dump($requete->queryString);
+        var_dump($requete->errorInfo());
+        echo "Erreur : " . $requete->errorInfo()[2] . "<br>";
+        die("Fin du script (index.php)");
+    }
+    // Si OK: redirection vers la page acceuil.php
+    header("Location: accueil.php");
+    // Fermeture du script
+    exit;
 }
 
 // DELETE

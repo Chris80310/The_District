@@ -1,5 +1,9 @@
 <?php
 
+session_start();
+
+// var_dump($_SESSION);
+
 include "db.php";
 
 $db = connexionBase();
@@ -11,7 +15,11 @@ $requete->execute(array($_GET["id"]));
 $resultat = $requete->fetchAll(PDO::FETCH_OBJ);
 $requete->closeCursor();
 
+
+
 include("header.php");
+
+
 
 // var_dump($resultat);
 
@@ -24,17 +32,34 @@ include("header.php");
             <form action ="script_commande.php" class="" method="post">
 
                 <div class="row m-auto">
-
-                    <div class="col-12 d-flex justify-content-center mx-auto my-5 cat_count rounded p-3">  
+                    <div class="col-12 d-flex justify-content-center mx-auto my-5 cat_count rounded p-3"> 
                         <h1>Commande</h1>
+                    </div>
+
+                    <div class="col-12 d-flex justify-content-center bg-light text-success my-0"> 
+                        <?php
+                            if (isset($_SESSION["confirmation"])){
+                                ?>
+                                <div id="message">
+                                    <h3>
+                                        <?= 
+                                            ($_SESSION["confirmation"]);
+                                        ?>
+                                    </h3>
+                                </div>
+                                <?php
+                                unset($_SESSION["confirmation"]);
+                            }
+                        ?>
                     </div>
 
                     <div class="col-lg-6">
                         <?php foreach ($resultat as $info): ?>
                             <!-- affichage des noms du plat -->
-                            <div CLASS="d-flex justify-content-center my-2"> 
+                            <div class="d-flex justify-content-center my-2"> 
                                 <h5 class="card-title" style="text-align:center"><h5><?= $info->libelle?></h5>
                                 <input type="hidden" name="libelle" value="<?= $info->libelle?>">
+                                <input type="hidden" name="id_plat" value="<?= $info->id?>">
                             </div>
                             <!-- partie inférieure avec l'image -->
                             <img src="/assets/images_the_district/food/<?= $info->image?>" class="img-fluid card-img-top img_plat"  alt="" height="300px" width="300px">
@@ -59,7 +84,7 @@ include("header.php");
                             <div class="">
                                 <!-- Select quantité : -->
                                 <select class="mx-2 my-3" name="qte" id="qte">
-                                    <option value="" name="option" id="option">Choisir </option>
+                                    <option value="" name="qte" id="option">Choisir </option>
                                 </select>
 
                                 <!-- Script pour le select quantité : -->
@@ -71,6 +96,12 @@ include("header.php");
                                 option.text = i;
                                 quantiteSelect.add(option);
                                 }
+
+                                //cacher la div message
+                                function showDiv2() {
+                                document.getElementById("message").classList.add('d-none');
+                                }
+                                setTimeout("showDiv2()", 10000); // aprés 10 secs
                                 </script>
 
                                 <!-- Prix total: -->
@@ -130,7 +161,7 @@ include("header.php");
                             </div>
                             <div class="">
                                 <input type="email" class="" name="email" id="form" placeholder=" Exemple@service.com" 
-                                required pattern="@([a-zA-Z0-9_.+-]+)\.[a-zA-Z0-9_.+-]">
+                                required pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$">
                             </div>
                         </div>   
 

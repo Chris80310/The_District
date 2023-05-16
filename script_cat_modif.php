@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-$create_cat= create_cat($libelle,$active,$picsName);
+$modif_cat= update_cat($libelle,$active,$picsName);
 
 /* Nous voulons maintenant créer un enregsitrement dans notre table disc, contenant les données récupérées via notre formulaire.
 Pour ce faire, nous allons créer une requête préparée afin d'éviter les injections SQL. Nous utiliserons ici des marqueurs nommés afin d'envoyer nos données.*/

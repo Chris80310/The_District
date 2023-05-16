@@ -14,7 +14,7 @@ $categories = all_from_cat();
             <hr class="w-75 mx-auto mt-3 mb-3">
             <br>
         <div class="text-center mb-5">
-            <a href="" class="col-2 btn btn-light btn-sm mx-3">Ajouter une catégorie</a>
+            <a href="form_ajout_cat.php" class="col-2 btn btn-light btn-sm mx-3">Ajouter une catégorie</a>
             <a href="admin.php" class="col-2 btn btn-light btn-sm mx-3">Retour</a>
         </div>
         
