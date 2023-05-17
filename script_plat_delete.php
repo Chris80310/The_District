@@ -22,9 +22,6 @@
     TrtRedirection:
     header("Location: accueil.php");
     exit;
-
-
-
 ?>
 
 

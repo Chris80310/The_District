@@ -36,9 +36,9 @@ function search_cat($search){
     $db = connexionBase();
     $query = $db->prepare('SELECT * FROM categorie WHERE libelle LIKE "%"?"%" AND LOWER(categorie.active) = "yes";');
     $query->execute(array($search));
-    $tab = $query->fetchAll(PDO::FETCH_OBJ);
+    $resultat = $query->fetchAll(PDO::FETCH_OBJ);
     $query->closeCursor();
-    return $tab;
+    return $resultat;
 
 }
 function search_plat($search){
@@ -47,9 +47,9 @@ function search_plat($search){
     $query->bindValue(":search1", $search, PDO::PARAM_STR);
     $query->bindValue(":search2", $search, PDO::PARAM_STR);
     $query->execute();
-    $tab = $query->fetchAll(PDO::FETCH_OBJ);
+    $resultat = $query->fetchAll(PDO::FETCH_OBJ);
     $query->closeCursor();
-    return $tab;
+    return $resultat;
 }
 
 
@@ -82,9 +82,9 @@ function all_from_plat(){
     $db = connexionBase();
     $query = $db->query('SELECT * FROM plat');
     $query->execute();
-    $tab = $query->fetchAll(PDO::FETCH_OBJ);
+    $resultat = $query->fetchAll(PDO::FETCH_OBJ);
     $query->closeCursor();
-    return $tab;
+    return $resultat;
 }
 
 // Lire avec id
@@ -92,9 +92,9 @@ function id_plat($id){
     $db = connexionBase();
     $query = $db->prepare('SELECT * FROM plat WHERE id_plat = ?;');
     $query->execute(array($id));
-    $tab = $query->fetch(PDO::FETCH_OBJ);
+    $resultat = $query->fetch(PDO::FETCH_OBJ);
     $query->closeCursor();
-    return $tab;
+    return $resultat;
 }
 
 // UPDATE
@@ -193,7 +193,7 @@ function create_cat($libelle,$active,$picsName){
         die("Fin du script (index.php)");
     }
     // Si OK: redirection vers la page acceuil.php
-    header("Location: accueil.php");
+    header("Location: index.php");
     // Fermeture du script
     exit;
 }
@@ -203,34 +203,32 @@ function all_from_cat(){
     $db = connexionBase();
     $query = $db->query('SELECT * FROM categorie');
     $query->execute();
-    $tab = $query->fetchAll(PDO::FETCH_OBJ);
+    $resultat = $query->fetchAll(PDO::FETCH_OBJ);
     $query->closeCursor();
-    return $tab;
+    return $resultat;
 }
 
 // Lire avec id
 function id_cat($id){
     $db = connexionBase();
-    $query = $db->prepare('SELECT * FROM categorie WHERE id_categorie = ?;');
+    $query = $db->prepare('SELECT * FROM categorie WHERE id= ?');
     $query->execute(array($id));
-    $tab = $query->fetch(PDO::FETCH_OBJ);
+    $resultat = $query->fetch(PDO::FETCH_OBJ);
     $query->closeCursor();
-    return $tab;
+    return $resultat;
 }
 
 function update_cat($libelle,$active,$picsName){
     try {
         $db = connexionBase();
-        // Construction de la requête INSERT sans injection SQL :
+        
         $requete = $db->prepare("UPDATE categorie SET libelle = :libelle, image = :picture, active = :active);");
         
-        // Association des valeurs aux paramètres via bindValue() :
+        
         $requete->bindValue(":libelle", $libelle,   PDO::PARAM_STR);
         $requete->bindValue(":active", $active,     PDO::PARAM_STR);
         $requete->bindvalue(":picture", $picsName, PDO::PARAM_STR);
-        // Lancement de la requête :
         $requete->execute();
-        // Libération de la requête (utile pour lancer d'autres requêtes par la suite) :
         $requete->closeCursor();
     
         // Gestion des erreurs
@@ -240,19 +238,39 @@ function update_cat($libelle,$active,$picsName){
         echo "Erreur : " . $requete->errorInfo()[2] . "<br>";
         die("Fin du script (index.php)");
     }
-    // Si OK: redirection vers la page acceuil.php
-    header("Location: accueil.php");
+    // Si OK: redirection vers la page
+    header("Location: index.php");
     // Fermeture du script
     exit;
 }
 
 // DELETE
-function delete_cat($id){
+
+function delete_cat($id_cat){ 
+    // Contrôle de l'ID (si inexistant ou <= 0, retour à la liste) :
+    // if (!(isset($_GET['id'])) || intval($_GET['id']) <= 0)
+    //  GOTO TrtRedirection;
+
+    // Si la vérification est ok :
+    // require "db.php"; 
     $db = connexionBase();
-    $query = $db->prepare('DELETE FROM categorie WHERE id_categorie = ?');
-    $query->execute(array($id));
-    $query->closeCursor();
-    return true;
+
+    try {
+        // Construction de la requête DELETE sans injection SQL :
+        $requete = $db->prepare("DELETE FROM categorie WHERE id = :id_cat and active = 'no'" );
+        $requete->bindValue(":id_cat", $id_cat,    PDO::PARAM_STR);
+        $requete->execute();
+        $requete->closeCursor();
+    }
+    catch (Exception $e) {
+        echo "Erreur : " . $requete->errorInfo()[2] . "<br>";
+        die("Fin du script (DAO.php)");
+    }
+
+    // Si OK: redirection vers la page
+  
+    // header("Location: admin_cat.php");
+    // exit;
 }
 
 //------------------------------ COMMANDE ------------------------------//
@@ -272,9 +290,9 @@ function all_from_com(){
     $db = connexionBase();
     $query = $db->query('SELECT * FROM commande');
     $query->execute();
-    $tab = $query->fetchAll(PDO::FETCH_OBJ);
+    $resultat = $query->fetchAll(PDO::FETCH_OBJ);
     $query->closeCursor();
-    return $tab;
+    return $resultat;
 }
 
 // All from commande by id
@@ -282,9 +300,9 @@ function id_com($id){
     $db = connexionBase();
     $query = $db->prepare('SELECT * FROM commande WHERE id_commande = ?;');
     $query->execute(array($id));
-    $tab = $query->fetch(PDO::FETCH_OBJ);
+    $resultat = $query->fetch(PDO::FETCH_OBJ);
     $query->closeCursor();
-    return $tab;
+    return $resultat;
 }
 
 // UPDATE
@@ -344,18 +362,18 @@ function all_from_usr(){
     $db = connexionBase();
     $query = $db->query('SELECT * FROM utilisateur');
     $query->execute();
-    $tab = $query->fetchAll(PDO::FETCH_OBJ);
+    $resultat = $query->fetchAll(PDO::FETCH_OBJ);
     $query->closeCursor();
-    return $tab;
+    return $resultat;
 }
 // READ WITH ID
 function id_usr($id){
     $db = connexionBase();
     $query = $db->prepare('SELECT * FROM utilisateur WHERE id_utilisateur = ?;');
     $query->execute(array($id));
-    $tab = $query->fetch(PDO::FETCH_OBJ);
+    $resultat = $query->fetch(PDO::FETCH_OBJ);
     $query->closeCursor();
-    return $tab;
+    return $resultat;
 }
 // UPDATE
 function update_user($id, $nom, $prenom, $email){

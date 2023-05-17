@@ -41,7 +41,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo "Votre image a été téléchargé avec succès.";
             }
         }          
-
         else {
             echo "Erreur: Il y a eu un problème de téléchargement de votre image! 
             Veuillez réessayer.";
@@ -53,6 +52,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $modif_cat= update_cat($libelle,$active,$picsName);
 
-/* Nous voulons maintenant créer un enregsitrement dans notre table disc, contenant les données récupérées via notre formulaire.
-Pour ce faire, nous allons créer une requête préparée afin d'éviter les injections SQL. Nous utiliserons ici des marqueurs nommés afin d'envoyer nos données.*/
 ?>

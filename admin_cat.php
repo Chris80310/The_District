@@ -4,6 +4,9 @@ require_once('DAO.php');
 include("header.php");
 
 $categories = all_from_cat();
+
+// $suppr = delete_cat($_GET["id"]);
+
 ?>
 
 <div class="container col-7 div_cat mt-5 py-5 bg_admin">
@@ -34,11 +37,46 @@ $categories = all_from_cat();
                         <td><img class="image-fluid col-12" src="assets/images_the_district/category/<?= $category->image ?>" alt="<?= $category->image ?>"></td>
                         <td class="text-center"><h5><?= $category->active ?></h5></td>
                         <td class="text-center">
-                            <a href="modif_cat.php=<?= $category->id ?>" class="col-5 btn btn-light btn-sm mx-1">Modifier</a>
-                            <a href="suppr_cat.php=<?= $category->id ?>" class="col-5 btn btn-light btn-sm mx-1">Supprimer</a>
+                            <a href="form_modif_cat.php?id=<?= $category->id ?>" class="col-5 btn btn-light btn-sm mx-1">Modifier</a>
+                        
+                            <form method="POST">
+                                <input type="button" class="del" value="Supprimer" onclick="return confirm('Voulez-vous vraiment supprimer cet élément ?')">
+                                <input type="hidden" name="del" value="<?= $category->id ?>">
+                            </form>
+
+                            <!-- <a href="admin_cat.php?id=<?=$category->id ?>" class="col-5 btn btn-light btn-sm mx-1">Supprimer</a> -->
+                          
                         </td>
                     </tr>
                 <?php endforeach; ?>
+
+            <?php
+
+            // if(isset($_POST["del"])){
+
+            //     $cat_id = $_POST["del"];
+            //     delete_cat($cat_id);
+            // }
+
+
+            // ?>
+
+
+
+            // <script>
+            //     function fonction_onclick (event) {
+            //     var message = 'Etes-vous sûr de vouloir supprimer cet élément ?';
+            //     confirm(message) || event.preventDefault();
+            //     }
+            //     var elem = document.getElementsByClassName('del');
+            //     elem.addEventListener('click', onclick);
+
+            // </script>
+
+               
+
+
+
             </tbody>
         </table>
     </div>

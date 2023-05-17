@@ -26,7 +26,7 @@ if(isset($confirmer)){
         $_SESSION["login"] = "webmaster";
         $_SESSION["role"] = "admin";
 
-        header("Location:index.php");
+        header("Location:admin.php");
         exit;
     }
 }
