@@ -4,6 +4,8 @@ require_once('DAO.php');
 include("header.php");
 
 $plats = all_from_plat();
+
+// $suppr = delete_plat($_GET["id"]);
 ?>
 
 <div class="container col-7 div_cat mt-5 py-5 bg_admin">
@@ -14,7 +16,7 @@ $plats = all_from_plat();
         <hr class="w-75 mx-auto mt-3 mb-3">
         <br>
         <div class="text-center mb-5">
-            <a href="" class="col-2 btn btn-light btn-sm mx-3">Ajouter un plat</a>
+            <a href="form_ajout_plat.php" class="col-2 btn btn-light btn-sm mx-3">Ajouter un plat</a>
             <a href="admin.php" class="col-2 btn btn-light btn-sm mx-3">Retour</a>
         </div>
         
@@ -34,11 +36,26 @@ $plats = all_from_plat();
                         <td><img class="image-fluid col-12" src="assets/images_the_district/food/<?= $plat->image ?>"></td>
                         <td class="text-center"><h5><?= $plat->active ?></h5></td>
                         <td class="text-center">
-                            <a href="modif_cat.php=<?= $plat->id ?>" class="col-5 btn btn-light btn-sm mx-1">Modifier</a>
-                            <a href="suppr_cat.php=<?= $plat->id ?>" class="col-5 btn btn-light btn-sm mx-1">Supprimer</a>
+                            <a href="modif_cat.php=<?= $plat->id ?>" class="col-5 my-2 btn btn-light btn-sm mx-1">Modifier</a>
+
+                            <form method="POST">
+                                <a href="suppr_cat.php=<?= $plat->id ?>" class="col-5 my-2 btn btn-light btn-sm mx-1" 
+                                onclick="return confirm('Voulez-vous vraiment supprimer cet élément ?')">Supprimer</a>
+                                <input type="hidden" name="del" value="<?= $plat->id ?>">
+                            </form>
                         </td>
                     </tr>
                 <?php endforeach; ?>
+
+                <!-- Suppr.plat : -->
+                <?php
+                if(isset($_POST["del"])){
+
+                    $plat_id = $_POST["del"];
+                    delete_plat($plat_id);
+                }
+                ?>
+
             </tbody>
         </table>
     </div>

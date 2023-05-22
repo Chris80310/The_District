@@ -5,7 +5,11 @@ include("header.php");
 
 $categories = all_from_cat();
 
-// $suppr = delete_cat($_GET["id"]);
+if (isset($_GET["id"])){
+$suppr = delete_cat($_GET["id"]);
+}
+
+// var_dump($_GET["id"]);
 
 ?>
 
@@ -40,42 +44,22 @@ $categories = all_from_cat();
                             <a href="form_modif_cat.php?id=<?= $category->id ?>" class="col-5 btn btn-light btn-sm mx-1">Modifier</a>
                         
                             <form method="POST">
-                                <input type="button" class="del" value="Supprimer" onclick="return confirm('Voulez-vous vraiment supprimer cet élément ?')">
+                                <a href="admin_cat.php?id=<?=$category->id ?>" class="del col-5 my-2 btn btn-sm btn-light "
+                                onclick="return confirm('Voulez-vous vraiment supprimer cet élément ?')">Supprimer</a>
                                 <input type="hidden" name="del" value="<?= $category->id ?>">
                             </form>
-
-                            <!-- <a href="admin_cat.php?id=<?=$category->id ?>" class="col-5 btn btn-light btn-sm mx-1">Supprimer</a> -->
-                          
                         </td>
                     </tr>
                 <?php endforeach; ?>
 
-            <?php
+                <!-- Suppr.cat : -->
+                <?php
+                if(isset($_POST["del"])){
 
-            // if(isset($_POST["del"])){
-
-            //     $cat_id = $_POST["del"];
-            //     delete_cat($cat_id);
-            // }
-
-
-            // ?>
-
-
-
-            // <script>
-            //     function fonction_onclick (event) {
-            //     var message = 'Etes-vous sûr de vouloir supprimer cet élément ?';
-            //     confirm(message) || event.preventDefault();
-            //     }
-            //     var elem = document.getElementsByClassName('del');
-            //     elem.addEventListener('click', onclick);
-
-            // </script>
-
-               
-
-
+                    $cat_id = $_POST["del"];
+                    delete_cat($cat_id);
+                }
+                ?>
 
             </tbody>
         </table>

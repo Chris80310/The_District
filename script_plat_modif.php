@@ -7,9 +7,13 @@ require("DAO.php");
 // var_dump($_FILES); 
 
 // Récupération de l'element (syntaxe abrégée)
+// $cat_list   = (isset($_POST['cat_list ']) && $_POST['cat_list '] != "") ? $_POST['cat_list '] : Null;
+//$picsName = (isset($_POST['image']) && $_POST['image'] != "") ? $_POST['image'] : Null;
 $libelle   = (isset($_POST['libelle']) && $_POST['libelle'] != "") ? $_POST['libelle'] : Null;
 $active    = (isset($_POST['active']) && $_POST['active'] != "") ? $_POST['active']  : Null;
-$picsName = (isset($_POST['picture']) && $_POST['picture'] != "") ? $_POST['picture'] : Null;
+$description = (isset($_POST['description']) && $_POST['description'] != "") ? $_POST['description'] : Null;
+$prix= (isset($_POST['prix']) && $_POST['prix'] != "") ? $_POST['prix'] : Null;
+$id_cat = (isset($_POST['id_cat']) && $_POST['id_cat'] != "") ? $_POST['id_cat'] : Null;
 
 // En cas d'erreur, on renvoie vers le formulaire
 // if ($libelle == Null || $active == Null) {
@@ -41,7 +45,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo "Votre image a été téléchargé avec succès.";
             }
         }          
-
         else {
             echo "Erreur: Il y a eu un problème de téléchargement de votre image! 
             Veuillez réessayer.";
@@ -51,6 +54,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-$create_cat= create_cat($libelle,$active,$picsName);
+update_cat($libelle,$active,$picsName,$description,$prix,$id_cat);
 
 ?>

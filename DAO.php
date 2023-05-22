@@ -68,13 +68,38 @@ function plat(){
     }
 
 // CREATE
-function create_plat($libelle,$description,$prix,$image,$id_categorie){
-    $active = "Yes";
-    $db = connexionBase();
-    $query = $db->prepare('INSERT INTO plat (libelle,description,prix,image,id_categorie,active) VALUES (?,?,?,?,?,?);');
-    $query->execute([$libelle,$description,$prix,$image,$id_categorie,$active]);
-    $query->closeCursor();
-    return true;  
+
+function create_plat($libelle,$active,$picsName,$description,$prix,$id_cat){
+    try {
+        $db = connexionBase();
+        // Construction de la requête INSERT sans injection SQL :
+        $requete = $db->prepare("INSERT INTO plat (libelle,description,prix,image,id_categorie,active)
+        VALUES (:libelle, :description, :prix, :image, :id_categorie, :active);");
+        
+        // Association des valeurs aux paramètres via bindValue() :
+        $requete->bindValue(":libelle", $libelle,   PDO::PARAM_STR);
+        $requete->bindValue(":active", $active,     PDO::PARAM_STR);
+        $requete->bindvalue(":image", $picsName, PDO::PARAM_STR);
+        $requete->bindvalue(":description", $description, PDO::PARAM_STR);
+        $requete->bindvalue(":prix", $prix, PDO::PARAM_STR);
+        $requete->bindvalue(":id_categorie", $id_cat, PDO::PARAM_INT);
+        // Lancement de la requête :
+        $requete->execute();
+        // Libération de la requête (utile pour lancer d'autres requêtes par la suite) :
+        $requete->closeCursor();
+    
+        // Gestion des erreurs
+    } catch (Exception $e) {
+        var_dump($libelle,$active,$picsName,$description,$prix,$id_cat);
+        var_dump($requete->queryString);
+        var_dump($requete->errorInfo());
+        echo "Erreur : " . $requete->errorInfo()[2] . "<br>";
+        die("Fin du script (DAO.php)");
+    }
+    // Si OK: redirection vers la page acceuil.php
+    // header("Location: index.php");
+    // Fermeture du script
+    exit;
 }
 
 // All from plat
@@ -123,13 +148,29 @@ function update_plat($id_plat,$libelle, $description, $prix, $image,$id_categori
 }
 
 // DELETE
-function delete_plat($id){
+
+function delete_plat($id_plat){ 
+
     $db = connexionBase();
-    $query = $db->prepare('DELETE FROM plat WHERE id_plat = ?');
-    $query->execute(array($id));
-    $query->closeCursor();
-    return true;
+
+    try {
+        // Construction de la requête DELETE sans injection SQL :
+        $requete = $db->prepare("DELETE FROM plat WHERE id = :id_plat and active = 'no'" );
+        $requete->bindValue(":id_plat ", $id_plat , PDO::PARAM_STR);
+        $requete->execute();
+        $requete->closeCursor();
+    }
+    catch (Exception $e) {
+        echo "Erreur : " . $requete->errorInfo()[2] . "<br>";
+        die("Fin du script (DAO.php)");
+    }
+
+    // Si OK: redirection vers la page
+  
+    // header("Location: admin_cat.php");
+    // exit;
 }
+
 
 /************************ Détails plats ************************/
 
@@ -258,7 +299,7 @@ function delete_cat($id_cat){
     try {
         // Construction de la requête DELETE sans injection SQL :
         $requete = $db->prepare("DELETE FROM categorie WHERE id = :id_cat and active = 'no'" );
-        $requete->bindValue(":id_cat", $id_cat,    PDO::PARAM_STR);
+        $requete->bindValue(":id_cat", $id_cat, PDO::PARAM_STR);
         $requete->execute();
         $requete->closeCursor();
     }
