@@ -2,9 +2,9 @@
 
 require("DAO.php");
 
-// var_dump($_POST);
-// var_dump($_FILES);
-// var_dump($_FILES); 
+var_dump($_REQUEST);
+var_dump($_FILES);
+
 
 // Récupération de l'element (syntaxe abrégée)
 $libelle   = (isset($_POST['libelle']) && $_POST['libelle'] != "") ? $_POST['libelle'] : Null;
@@ -50,6 +50,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-$modif_cat= update_cat($libelle,$active,$picsName);
+update_cat($libelle,$active,$picsName,$id);
 
 ?>

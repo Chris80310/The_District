@@ -124,31 +124,42 @@ function id_plat($id){
 
 // UPDATE
 function update_plat($id_plat,$libelle, $description, $prix, $image,$id_categorie){
-    $active = "Yes";
-    $db = connexionBase();
-    $query = $db->prepare("UPDATE plat SET 
-                libelle=:libelle, 
-                description=:description, 
-                prix=:prix, 
-                image=:image, 
-                id_categorie=:id_categorie, 
-                active=:active
-            WHERE id_plat=:id_plat");
-    $query->bindValue(":id_plat", $id_plat, PDO::PARAM_STR);
-    $query->bindValue(":libelle", $libelle, PDO::PARAM_STR);
-    $query->bindValue(":description", $description, PDO::PARAM_STR);
-    $query->bindValue(":prix", $prix, PDO::PARAM_STR);
-    $query->bindValue(":image", $image, PDO::PARAM_STR);
-    $query->bindValue(":id_categorie", $id_categorie, PDO::PARAM_STR);
-    $query->bindValue(":active", $active, PDO::PARAM_STR);
-    
-    $query->execute();
-    $query->closeCursor();
-
+    try {
+        $active = "Yes";
+        $db = connexionBase();
+        $query = $db->prepare("UPDATE plat SET 
+        libelle=:libelle, 
+        description=:description, 
+        prix=:prix, 
+        image=:image, 
+        id_categorie=:id_categorie, 
+        active=:active
+        WHERE id_plat=:id_plat");
+        $query->bindValue(":id_plat", $id_plat, PDO::PARAM_STR);
+        $query->bindValue(":libelle", $libelle, PDO::PARAM_STR);
+        $query->bindValue(":description", $description, PDO::PARAM_STR);
+        $query->bindValue(":prix", $prix, PDO::PARAM_STR);
+        $query->bindValue(":image", $image, PDO::PARAM_STR);
+        $query->bindValue(":id_categorie", $id_categorie, PDO::PARAM_STR);
+        $query->bindValue(":active", $active, PDO::PARAM_STR);
+        
+        $query->execute();
+        $query->closeCursor();
+    }
+        // Gestion des erreurs
+    catch (Exception $e) {
+        var_dump($query->queryString);
+        var_dump($query->errorInfo());
+        echo "Erreur : " . $query->errorInfo()[2] . "<br>";
+        die("Fin du script (admin_plat.php)");
+    }
+    // Si OK: redirection vers la page
+    header("Location: admin_plat.php");
+    // Fermeture du script
+    exit;
 }
 
 // DELETE
-
 function delete_plat($id_plat){ 
 
     $db = connexionBase();
@@ -259,16 +270,18 @@ function id_cat($id){
     return $resultat;
 }
 
-function update_cat($libelle,$active,$picsName){
+// UPDATE
+function update_cat($libelle,$active,$picsName,$id){
     try {
         $db = connexionBase();
         
-        $requete = $db->prepare("UPDATE categorie SET libelle = :libelle, image = :picture, active = :active);");
+        $requete = $db->prepare("UPDATE categorie SET libelle = :libelle, image = :picture, active = :active where id = :id");
         
         
         $requete->bindValue(":libelle", $libelle,   PDO::PARAM_STR);
         $requete->bindValue(":active", $active,     PDO::PARAM_STR);
         $requete->bindvalue(":picture", $picsName, PDO::PARAM_STR);
+        $requete->bindvalue(":id", $id, PDO::PARAM_INT);
         $requete->execute();
         $requete->closeCursor();
     
@@ -277,10 +290,10 @@ function update_cat($libelle,$active,$picsName){
         var_dump($requete->queryString);
         var_dump($requete->errorInfo());
         echo "Erreur : " . $requete->errorInfo()[2] . "<br>";
-        die("Fin du script (index.php)");
+        die("Fin du script (DAO.php)");
     }
     // Si OK: redirection vers la page
-    header("Location: index.php");
+    header("Location: admin_cat.php");
     // Fermeture du script
     exit;
 }

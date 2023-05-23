@@ -148,6 +148,12 @@ a.btn_form,a.btn_comm,input.btn_comm{
     border-color:white;
 }
 
+a.btn_com2{
+    background-color:white;
+    color:purple;
+    border-color:white;
+}
+
 /* Hover boutons a : */
 a.btn_form:hover,a.btn_form2:hover,a.btn_comm:hover,
 /* Hover boutons input :  */
@@ -157,6 +163,12 @@ input.btn_comm:hover,input.btn_form:hover,
     background-color :green;
     border-color: green;
 }
+a.btn_com2:hover{
+    background: purple;
+    color: white;
+    border-color: purple;
+}
+
 
 /* Formulaire contact : */
 .form{

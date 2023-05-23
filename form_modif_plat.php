@@ -3,7 +3,7 @@
 include "DAO.php";
 include "header.php";
 
-// $modif_plat = update_cat($_GET["id"]);
+$plat= update_plat($id_plat,$libelle, $description, $prix, $image,$id_categorie);
 
 ?>
 
@@ -12,12 +12,12 @@ include "header.php";
     <div class="container col-7 div_cat mt-5 py-5">
 
         <div class="col-3 d-flex justify-content-center mx-auto my-5 cat_count rounded p-3">
-            <h1>Modifier catégorie</h1>
+            <h1>Modifier le plat</h1>
         </div>
 
         <thead>
             <tr>
-                <th class="col-2 text-center">Nom de la catégorie</th>
+                <th class="col-2 text-center">Nom du plat</th>
                 <th class="col-2 text-center">Image</th>
                 <th class="col-3 text-center">Active</th>
                
@@ -28,11 +28,11 @@ include "header.php";
             <tr>
                 
                 <td class="text-center">
-                    <h5><?= $category->libelle ?></h5>
+                    <h5><?= $plat->libelle ?></h5>
                 </td>
-                <td><img class="image-fluid col-3" src="assets/images_the_district/category/<?= $category->image ?>" alt="<?= $category->image ?>"></td>
+                <td><img class="image-fluid col-3" src="assets/images_the_district/plat/<?= $plat->image ?>" alt="<?= $plat->image ?>"></td>
                 <td class="text-center">
-                    <h5><?= $category->active ?></h5>
+                    <h5><?= $plat->active ?></h5>
                 </td>
         
             </tr>

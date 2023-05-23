@@ -8,7 +8,7 @@ require("DAO.php");
 
 // Récupération de l'element (syntaxe abrégée)
 // $cat_list   = (isset($_POST['cat_list ']) && $_POST['cat_list '] != "") ? $_POST['cat_list '] : Null;
-//$picsName = (isset($_POST['image']) && $_POST['image'] != "") ? $_POST['image'] : Null;
+$picsName = (isset($_FILES['image']) && $_FILES['image'] != "") ? $_FILES['image'] : Null;
 $libelle   = (isset($_POST['libelle']) && $_POST['libelle'] != "") ? $_POST['libelle'] : Null;
 $active    = (isset($_POST['active']) && $_POST['active'] != "") ? $_POST['active']  : Null;
 $description = (isset($_POST['description']) && $_POST['description'] != "") ? $_POST['description'] : Null;
@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $picsType = $_FILES["picture"]["type"];
         $picsSize = $_FILES["picture"]["size"];
         $maxSize = 5000000;
-        // (<= 5Mo)
+        // (<= 5Mo)$picsName = (isset($_POST['image']) && $_POST['image'] != "") ? $_POST['image'] : Null;
             $finfo = finfo_open(FILEINFO_MIME_TYPE);
             $picsType = finfo_file($finfo, $_FILES["picture"]["tmp_name"]);
             finfo_close($finfo);
@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 die("La taille de votre image est supérieure à la limite autorisée!");
             }          
             else {
-                move_uploaded_file($_FILES["picture"]["tmp_name"], "assets/images_the_district/category" . $_FILES["picture"]["name"]);
+                move_uploaded_file($_FILES["picture"]["tmp_name"], "assets/images_the_district/food/" . $_FILES["picture"]["name"]);
                 echo "Votre image a été téléchargé avec succès.";
             }
         }          

@@ -5,6 +5,10 @@ include("header.php");
 
 $plats = all_from_plat();
 
+if (isset($_GET["id"])){
+    $suppr = delete_plat($_GET["id"]);
+    }
+
 // $suppr = delete_plat($_GET["id"]);
 ?>
 
@@ -36,7 +40,7 @@ $plats = all_from_plat();
                         <td><img class="image-fluid col-12" src="assets/images_the_district/food/<?= $plat->image ?>"></td>
                         <td class="text-center"><h5><?= $plat->active ?></h5></td>
                         <td class="text-center">
-                            <a href="modif_cat.php=<?= $plat->id ?>" class="col-5 my-2 btn btn-light btn-sm mx-1">Modifier</a>
+                            <a href="form_modif_plat.php=<?= $plat->id ?>" class="col-5 my-2 btn btn-light btn-sm mx-1">Modifier</a>
 
                             <form method="POST">
                                 <a href="suppr_cat.php=<?= $plat->id ?>" class="col-5 my-2 btn btn-light btn-sm mx-1" 

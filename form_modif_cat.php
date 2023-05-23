@@ -12,7 +12,7 @@ $category = id_cat($_GET["id"]);
     <div class="container col-7 div_cat mt-5 py-5">
 
         <div class="col-3 d-flex justify-content-center mx-auto my-5 cat_count rounded p-3">
-            <h1>Modifier catégorie</h1>
+            <h1>Modifier la catégorie</h1>
         </div>
 
         <thead>

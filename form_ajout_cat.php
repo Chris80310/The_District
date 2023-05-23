@@ -44,7 +44,7 @@ include "header.php"
 
                 <div class="col-12 d-flex justify-content-center my-5">
                     <input class="btn btn-primary col-2 mx-5 mt-3 btn_form" type="submit" name="Confirmer" value="Confirmer">
-                    <a class="btn btn-primary col-2 mx-5 mt-3 btn_form2" href="index.php">Retour</a>
+                    <a class="btn btn-primary col-2 mx-5 mt-3 btn_form2" href="admin.php">Retour</a>
                 </div>
             </div>
 

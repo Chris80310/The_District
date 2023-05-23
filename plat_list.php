@@ -39,7 +39,7 @@
                             </div>
                             <!-- Bouton "commander": -->
                             <div class="d-flex justify-content-center my-3">
-                                <a class="btn btn-primary btn_comm p-auto" style="width:130px" href ="commande.php?id=<?=$plat->id?>">Commander</a>
+                                <a class="btn btn-primary btn_com2 p-auto" style="width:130px" href ="commande.php?id=<?=$plat->id?>">Commander</a>
                             </div>
 
                         </div>
