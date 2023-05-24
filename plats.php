@@ -10,9 +10,9 @@ $plat = plat();
 
 <body class="bg1">
 
-    <div class="container col-7 div_cat mt-5 py-5">
+    <div class="container col-md-7 col-12 div_cat mt-5 py-5">
         
-        <div class="col-4 d-flex justify-content-around mx-auto my-5 cat_count rounded p-3">  
+        <div class="col-md-4 col-12 d-flex justify-content-around mx-auto my-5 cat_count rounded p-3">  
             <h1>Nos plats (<?=count($plat)?>)</h1>
         </div>
 
@@ -23,9 +23,9 @@ $plat = plat();
                     <div class="card-body p-2">
                         <a href="plat_list.php?id=<?=$infos->id_categorie?>" class="card_title">
                         <!-- affichage des noms de catégories -->
-                        <h5 class="card-title" style="text-align:center"><strong>"<?= $infos->libelle?>"</strong></h5>
+                        <h5 class="card-title text-center"><strong>"<?= $infos->libelle?>"</strong></h5>
                         <!-- partie inférieure avec l'image -->
-                        <img src="assets/images_the_district/food/<?= $infos->image?>" class="card-img-top img-responsive" alt="image"></a>
+                        <img src="assets/images_the_district/food/<?= $infos->image?>" class="card-img-top img-fluid" alt="image"></a>
                         <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->   
                     </div>
                 </div>

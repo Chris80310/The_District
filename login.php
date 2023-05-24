@@ -11,9 +11,9 @@
 
     ?>
 
-    <div class="container col-7 div_cat mt-5 py-5">
+    <div class="container col-md-7 col-12 div_cat mt-5 py-5">
 
-        <div class="col-3 d-flex justify-content-center mx-auto my-5 cat_count rounded p-3">  
+        <div class="col-md-3 col-12 d-flex justify-content-center mx-auto my-5 cat_count rounded p-3">  
             <h1>Connexion</h1>
         </div>
 
@@ -42,8 +42,8 @@
                 </div>   
 
                 <div class="col-12 d-flex justify-content-center my-5">
-                    <input class="btn btn-primary col-2 mx-5 mt-3 btn_form" type="submit" name="confirmer" value="Confirmer">
-                    <a class="btn btn-primary col-2 mx-5 mt-3 btn_form2" href="index.php">Retour</a>
+                    <input class="btn btn-primary col-md-2 col-6 mx-2 mt-3 btn_form" type="submit" name="confirmer" value="Confirmer">
+                    <a class="btn btn-primary col-md-2 col-6 mx-2 mt-3 btn_form2" href="index.php">Retour</a>
                 </div>
             </div>
 

@@ -1,4 +1,4 @@
-@media(max-width:480px){
+/* @media(max-width:480px){
     .div_discs{
         flex-direction: column;
         height: auto;
@@ -30,7 +30,7 @@
     .div_discs,.div_header,.detail_disc{
         height: auto;
     }
-}
+} */
 
 body{
     background: url("/assets/images_the_district/food/spaghetti-legumes.jpg");
@@ -58,9 +58,14 @@ a span:hover{
     background-color: deeppink;
 }
 
-#navbarNav{
+.navbarNav{
     background-color:purple;   
 }
+
+.btn_menu{
+    color: purple;
+}
+
 
 .bg_li{
     background-color: black;
@@ -117,7 +122,7 @@ h1{
     -ms-transform: scale(1.15); /* IE 9 */
     -webkit-transform: scale(1.15); /* Safari 3-8 */
     transform: scale(1.15);
-    transition: transform 1s;
+    transition: transform 3s;
 }
 
 /* Lien sur card : */

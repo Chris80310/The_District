@@ -57,14 +57,14 @@ include("header.php");
                         <?php foreach ($resultat as $info): ?>
                             <!-- affichage des noms du plat -->
                             <div class="d-flex justify-content-center my-2"> 
-                                <h5 class="card-title" style="text-align:center"><h5><?= $info->libelle?></h5>
+                                <h5 class="card-title text-center"><h5><?= $info->libelle?></h5>
                                 <input type="hidden" name="libelle" value="<?= $info->libelle?>">
                                 <input type="hidden" name="id_plat" value="<?= $info->id?>">
                             </div>
                             <!-- partie inférieure avec l'image -->
-                            <img src="/assets/images_the_district/food/<?= $info->image?>" class="img-fluid card-img-top img_plat"  alt="" height="300px" width="300px">
+                            <img src="/assets/images_the_district/food/<?= $info->image?>" class="img-fluid card-img-top"  alt="image_plat" height="300px" width="300px">
                             <!-- affichage des noms du prix -->
-                            <p style="text-align:center" class="mt-4"><strong><?= $info->prix .' €'?></strong></p>
+                            <p style="text-align:center mt-4"><strong><?= $info->prix .' €'?></strong></p>
                             <!-- affichage de la description -->
                             <div class="row descr">
                                 <p style="text-align:center"><?= $info->description?></p>

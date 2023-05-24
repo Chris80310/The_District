@@ -10,10 +10,10 @@
 
 <body class="bg1">
 
-    <div class="container col-7 div_cat mt-5 py-5">
+    <div class="container col-md-7 col-12 div_cat mt-5 py-5">
         <form action ="script_plat_ajout.php" method="post">
 
-            <div class="col-5 d-flex justify-content-center m-auto my-5 cat_count rounded p-3"> 
+            <div class="col-md-5 col-12 d-flex justify-content-center m-auto my-5 cat_count rounded p-3"> 
                 <?php foreach($plat_info as $cat) : ?>
                     <h1>Nos plats "<?= $cat->libelle?>"</h1>
                 <?php endforeach; ?>

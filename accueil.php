@@ -17,7 +17,7 @@ $res2 = $tab[1];
         
         <!-- catégories : -->
 
-        <div class="col-5 d-flex justify-content-center m-auto my-5 cat_count rounded p-3">  
+        <div class="col-md-5 col-12 d-flex justify-content-center m-auto mb-5 cat_count rounded p-3">  
             <h1>Nos spécialités (<?=count($res)?>)</h1>
         </div>
         
@@ -28,9 +28,9 @@ $res2 = $tab[1];
                     <div class="card-body p-2">
                         <a href="plat_list.php?id=<?= $infos->id?>" class="card_title">
                         <!-- affichage des noms de catégories -->
-                        <h5 class="card-title p-auto" style="text-align:center"><strong>Nos plats "<?= $infos->libelle?>"</strong></h5>
+                        <h5 class="card-title p-auto text-center"><strong>Nos plats "<?= $infos->libelle?>"</strong></h5>
                         <!-- partie inférieure avec l'image -->
-                        <img src="assets/images_the_district/category/<?= $infos->image?>"class="card-img-top img-responsive" alt="image"></a> 
+                        <img src="assets/images_the_district/category/<?= $infos->image?>"class="card-img-top img-fluid" alt="image"></a> 
                     </div>
                 </div>  
 
@@ -39,7 +39,7 @@ $res2 = $tab[1];
 
         <!-- Plats sugérés par popularité : -->
 
-        <div class="col-4 d-flex justify-content-center mx-auto my-5 cat_count rounded p-3">  
+        <div class="col-md-4 col-12 d-flex justify-content-center mx-auto my-5 cat_count rounded p-3">  
             <h1>Plats populaires</h1>
         </div>
 
@@ -50,9 +50,9 @@ $res2 = $tab[1];
                     <div class="card-body p-2">
                         <a href="commande.php?id=<?=$infos2->id?>" class="card_title">
                         <!-- affichage des noms de catégories -->
-                        <h5 class="card-title" style="text-align:center"><strong>"<?= $infos2->libelle?>"</strong></h5>
+                        <h5 class="card-title text-center"><strong>"<?= $infos2->libelle?>"</strong></h5>
                         <!-- partie inférieure avec l'image -->
-                        <img src="assets/images_the_district/food/<?= $infos2->image?>" class="card-img-top img-responsive" alt="image"></a>
+                        <img src="assets/images_the_district/food/<?= $infos2->image?>" class="card-img-top img-fluid" alt="image"></a>
                         <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->   
                     </div>
                 </div>     
