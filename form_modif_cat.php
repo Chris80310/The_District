@@ -5,6 +5,8 @@ include "header.php";
 
 $category = id_cat($_GET["id"]);
 
+// $modif_cat = update_cat($libelle,$active,$picsName,$id);
+
 ?>
 
 <body class="bg1">
@@ -14,29 +16,10 @@ $category = id_cat($_GET["id"]);
         <div class="col-3 d-flex justify-content-center mx-auto my-5 cat_count rounded p-3">
             <h1>Modifier la catégorie</h1>
         </div>
-
-        <thead>
-            <tr>
-                <th class="col-2 text-center">Nom de la catégorie</th>
-                <th class="col-2 text-center">Image</th>
-                <th class="col-3 text-center">Active</th>
-               
-            </tr>
-        </thead>
-
-        <tbody>
-            <tr>
-                
-                <td class="text-center">
-                    <h5><?= $category->libelle ?></h5>
-                </td>
-                <td><img class="image-fluid col-3" src="assets/images_the_district/category/<?= $category->image ?>" alt="<?= $category->image ?>"></td>
-                <td class="text-center">
-                    <h5><?= $category->active ?></h5>
-                </td>
-        
-            </tr>
-        </tbody>
+       
+        <div class="col-12 d-flex justify-content-center rounded">    
+            <img class="image-fluid col-3" src="assets/images_the_district/category/<?= $category->image ?>" alt="<?= $category->image ?>">
+        </div> 
 
         <form action="script_cat_modif.php" method="post" enctype="multipart/form-data">
 
@@ -48,7 +31,7 @@ $category = id_cat($_GET["id"]);
                         </label>
                     </div>
                     <div class="col-9">
-                        <input type="text" class="col-8 form" name="libelle" id="libelle">
+                        <input type="text" class="col-8 form" name="libelle" id="libelle" value="<?= $category->libelle ?>">
                     </div>
                 </div>
 
@@ -59,7 +42,7 @@ $category = id_cat($_GET["id"]);
                         </label><br>
                     </div>
                     <div class="col-9">
-                        <input type="file" class="col-8 form" name="picture" id="image">
+                        <input type="file" class="col-8 form" name="picture" id="image" value="<?= $category->image ?>">
                     </div>
                 </div>
 
@@ -70,9 +53,11 @@ $category = id_cat($_GET["id"]);
                         </label>
                     </div>
                     <div class="col-9">
-                        <input type="text" class="col-8 form" name="active" id="active">
+                        <input type="text" class="col-8 form" name="active" id="active" value="<?= $category->active?>">
                     </div>
                 </div>
+
+                <input type="hidden" id="id" name="id" value="<?= $category->id?>">
 
                 <div class="col-12 d-flex justify-content-center my-5">
                     <input class="btn btn-primary col-2 mx-5 mt-3 btn_form" type="submit" name="Confirmer" value="Confirmer">

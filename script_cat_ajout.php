@@ -12,10 +12,10 @@ $active    = (isset($_POST['active']) && $_POST['active'] != "") ? $_POST['activ
 $picsName = (isset($_POST['picture']) && $_POST['picture'] != "") ? $_POST['picture'] : Null;
 
 // En cas d'erreur, on renvoie vers le formulaire
-// if ($libelle == Null || $active == Null) {
-//     header("Location: form_ajout_cat.php");
-//     exit;
-// }
+if ($libelle == Null || $active == Null) {
+    header("Location: form_ajout_cat.php");
+    exit;
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 

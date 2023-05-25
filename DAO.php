@@ -242,10 +242,10 @@ function create_cat($libelle,$active,$picsName){
         var_dump($requete->queryString);
         var_dump($requete->errorInfo());
         echo "Erreur : " . $requete->errorInfo()[2] . "<br>";
-        die("Fin du script (index.php)");
+        die("Fin du script (admin_cat.php.php)");
     }
     // Si OK: redirection vers la page acceuil.php
-    header("Location: index.php");
+    header("Location: admin_cat.php");
     // Fermeture du script
     exit;
 }
@@ -272,6 +272,7 @@ function id_cat($id){
 
 // UPDATE
 function update_cat($libelle,$active,$picsName,$id){
+    // var_dump($libelle, $active,$picsName,$id);
     try {
         $db = connexionBase();
         
@@ -284,6 +285,7 @@ function update_cat($libelle,$active,$picsName,$id){
         $requete->bindvalue(":id", $id, PDO::PARAM_INT);
         $requete->execute();
         $requete->closeCursor();
+        return true;
     
         // Gestion des erreurs
     } catch (Exception $e) {
@@ -293,9 +295,9 @@ function update_cat($libelle,$active,$picsName,$id){
         die("Fin du script (DAO.php)");
     }
     // Si OK: redirection vers la page
-    header("Location: admin_cat.php");
+    // header("Location: admin_cat.php");
     // Fermeture du script
-    exit;
+    // exit;
 }
 
 // DELETE
