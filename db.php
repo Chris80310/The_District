@@ -19,11 +19,18 @@ function connexionBase(){
     {
         // !!! REMPLACER SELON LE POSTE : !!!
 
+        // MariaDb(afpa):
         $pdo = new PDO('mysql:host='.$dbhost.';charset=utf8;dbname='.$db, $dbuser2, $dbpasswd2);
 
         // OU : //
 
-        // $pdo = new PDO('mysql:host='.$dbhost.';port='.$dbport.';dbname='.$db.';charset=utf8'.'', $dbuser, $dbpasswd); 
+        // Domicile:
+        // $pdo = new PDO('mysql:host='.$dbhost.';port='.$dbport.';dbname='.$db.';charset=utf8'.'', $dbuser, $dbpasswd);
+        
+        // OU : //
+
+        // PhpMyAdmin(afpa):
+        // $pdo = new PDO('mysql:host=localhost;dbname=chris80', 'chris80', 'azerty80310');
 
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $pdo;
