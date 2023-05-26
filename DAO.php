@@ -404,7 +404,7 @@ function delete_command($id){
 // CREATE
 function create_user($nom, $prenom, $email, $hashed_password){
     $db = connexionBase();
-    $query = $db->prepare(' INSERT INTO utilisateur (nom, prenom, email, password) VALUES (:nom, :prenom, :email, :hashed_password);');
+    $query = $db->prepare(' INSERT INTO utilisateur (nom, prenom, email, password) VALUES (:nom, :prenom, :email, :hashed_password)');
     $query->bindValue(":nom", $nom, PDO::PARAM_STR);
     $query->bindValue(":prenom", $prenom, PDO::PARAM_STR);
     $query->bindValue(":email", $email, PDO::PARAM_STR);
@@ -425,7 +425,7 @@ function all_from_usr(){
 // READ WITH ID
 function id_usr($id){
     $db = connexionBase();
-    $query = $db->prepare('SELECT * FROM utilisateur WHERE id_utilisateur = ?;');
+    $query = $db->prepare('SELECT * FROM utilisateur WHERE id_utilisateur = ?');
     $query->execute(array($id));
     $resultat = $query->fetch(PDO::FETCH_OBJ);
     $query->closeCursor();

@@ -30,9 +30,7 @@ function connexionBase(){
         // OU : //
 
         // PhpMyAdmin(afpa):
-        // $pdo = new PDO('mysql:host=localhost;dbname=chris80', 'chris80', 'azerty80310');
-
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        // $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $pdo;
     }
     catch (Exception $e)

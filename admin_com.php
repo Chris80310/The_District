@@ -17,36 +17,36 @@ $resultat = all_from_com();
         <a href="admin.php" class="col-md-2 col-4 btn btn-light btn-sm mx-3">Retour</a>
     </div>
     
-    <div class="table-responsive">
+    <div class="table-responsive text-center">
         <table class="table_c table-bordered mx-3">
             <thead>
                 <tr>
-                    <th class="col-md-1 col-2 text-center">ID Plat</th>
-                    <th class="col-md-1 col-2 text-center">Quantité</th>
-                    <th class="col-md-1 col-2 text-center">Total</th>
-                    <th class="col-md-1 col-2 text-center">Date</th>
-                    <th class="col-md-1 col-2 text-center">etat</th>
-                    <th class="col-md-1 col-2 text-center">Nom client</th>
-                    <th class="col-md-1 col-2 text-center">Téléphone</th>
-                    <th class="col-md-1 col-2 text-center">Email</th>
-                    <th class="col-md-2 col-2 text-center">Adresse</th>
-                    <th class="col-md-2 col-2 text-center">Actions</th>
+                    <th class="col-md-1 col-2">ID Plat</th>
+                    <th class="col-md-1 col-2">Quantité</th>
+                    <th class="col-md-1 col-2">Total</th>
+                    <th class="col-md-1 col-2">Date</th>
+                    <th class="col-md-1 col-2">etat</th>
+                    <th class="col-md-1 col-2">Nom client</th>
+                    <th class="col-md-1 col-2">Téléphone</th>
+                    <th class="col-md-1 col-2">Email</th>
+                    <th class="col-md-2 col-2">Adresse</th>
+                    <th class="col-md-2 col-2">Actions</th>
                 </tr>
             </thead>
 
             <tbody>
                 <?php foreach ($resultat as $row) : ?>
                     <tr>
-                    <td class="text-center"><?= $row->id_plat ?> </td>
-                    <td class="text-center"><?= $row->quantite ?> </td>
-                    <td class="text-center"><?= $row->total ?>€ </td>
-                    <td class="text-center"><?= $row->date_commande ?> </td>
-                    <td class="text-center"><?= $row->etat ?> </td>
-                    <td class="text-center"><?= $row->nom_client ?> </td>
-                    <td class="text-center"><?= $row->telephone_client ?> </td>
-                    <td class="text-center"><?= $row->email_client ?> </td>
-                    <td class="text-center"><?= $row->adresse_client ?> </td>
-                    <td class="text-center">
+                    <td><?= $row->id_plat ?> </td>
+                    <td><?= $row->quantite ?> </td>
+                    <td><?= $row->total ?>€ </td>
+                    <td><?= $row->date_commande ?> </td>
+                    <td><?= $row->etat ?> </td>
+                    <td><?= $row->nom_client ?> </td>
+                    <td><?= $row->telephone_client ?> </td>
+                    <td><?= $row->email_client ?> </td>
+                    <td><?= $row->adresse_client ?> </td>
+                    <td>
                         <a href="<?= $row->id ?> " class=" col-md-10 btn btn-light btn-sm my-1">Modifier</a>
                         <a href="<?= $row->id ?> " class=" col-md-10 btn btn-light btn-sm my-1">Supprimer</a>
                     </td>
