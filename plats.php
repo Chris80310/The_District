@@ -10,9 +10,9 @@ $plat = plat();
 
 <body class="bg1">
 
-    <div class="container col-md-7 col-12 div_cat mt-5 py-5">
+    <div class="container col-xs-7 col-12 div_cat mt-5 py-5">
         
-        <div class="col-md-4 col-12 d-flex justify-content-around mx-auto my-5 cat_count rounded p-3">  
+        <div class="col-xs-4 col-4 text-center mx-auto my-5 cat_count rounded p-3">  
             <h1>Nos plats (<?=count($plat)?>)</h1>
         </div>
 

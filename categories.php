@@ -12,7 +12,7 @@ $cat=get_categories();
         
         <!-- catégories : -->
 
-        <div class="col-md-5 col-12 d-flex justify-content-around mx-auto my-5 cat_count rounded p-3">  
+        <div class="col m-auto mb-5 cat_count rounded p-3">  
             <h2>Toutes nos spécialités (<?=count($cat)?>)</h2>
         </div>
         

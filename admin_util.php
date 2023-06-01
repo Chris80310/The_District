@@ -10,11 +10,11 @@
 
 <div class="container col-7 div_cat mt-5 py-5 bg_admin">
 
-    <h2 class="col-md-5 col-8 d-flex justify-content-center m-auto my-5 cat_count rounded p-3">Gestion utilisateurs</h2>
+    <h2 class="col-xs-5 col-8 d-flex justify-content-center m-auto my-5 cat_count rounded p-3">Gestion utilisateurs</h2>
 
     <div class="text-center mb-5">
-        <a href="user_ajout.php" class="col-md-2 col-4 btn btn-light btn-sm mx-3">Ajout utilisateur</a>
-        <a href="admin.php" class="col-md-2 col-4 btn btn-light btn-sm mx-3">Retour</a>
+        <a href="user_ajout.php" class="col-xs-2 col-4 btn btn-light btn-sm mx-3">Ajout utilisateur</a>
+        <a href="admin.php" class="col-xs-2 col-4 btn btn-light btn-sm mx-3">Retour</a>
     </div>
 
     <div class="table-responsive text-center">
@@ -46,7 +46,7 @@
             </tbody>
         </table>
         <div class="text-center my-5">
-            <a href="/?page=admin&gest=user_create" class="col-md-2 btn btn-light btn-sm text-white mx-2">Valider</a>
+            <a href="/?page=admin&gest=user_create" class="col-xs-2 btn btn-light btn-sm text-white mx-2">Valider</a>
         </div>
     
     </div>

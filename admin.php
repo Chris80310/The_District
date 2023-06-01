@@ -17,11 +17,11 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
            
             <?php if (isset($_SESSION['login'])) : ?>
             <nav>
-                <div class="col-md-4 col-12 d-flex justify-content-center m-auto my-5 cat_count rounded">
+                <div class="col-xs-4 col-12 d-flex justify-content-center m-auto my-5 cat_count rounded">
                     <h1 class="text-center text-white my-5">Administration</h1>
                 </div>
                 <div class="d-flex row mt-5 mb-5 rounded mnb">
-                    <ul class="navbar-nav ms-md-auto me-md-5">
+                    <ul class="navbar-nav ms-xs-auto me-xs-5">
                         <li class="nav-item mx-4 d-flex justify-content-center">
                             <a class="nav-link text-white" href="admin_cat.php">Gestion catégories</a>
                         </li>

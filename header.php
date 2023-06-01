@@ -18,10 +18,12 @@
     <header class="bg_header">
 
         <div class="container-fluid p-0">
-            <div class="col d-flex div_header">
-                <!-- banière / logo :  --> 
-                <img src="/assets/images_the_district/the_district_brand/logo_transparent.png" class="img-fluid" style="height: 300px;">
-            </div>
+            <a href="index.php">
+                <div class="col d-flex div_header">
+                    <!-- banière / logo :  --> 
+                    <img src="/assets/images_the_district/the_district_brand/logo_transparent.png" class="img-fluid" style="height: 300px;">
+                </div>
+            </a>
             
             <nav class="navbar navbar-expand-lg navbarNav">
                 <div class="container-fluid navbarNav">

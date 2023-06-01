@@ -17,7 +17,7 @@ $res2 = $tab[1];
         
         <!-- catégories : -->
 
-        <div class="col-md-5 col-12 d-flex justify-content-center m-auto mb-5 cat_count rounded p-3">  
+        <div class="col col-xs-12  m-auto mb-5 cat_count rounded p-3">  
             <h1>Nos spécialités (<?=count($res)?>)</h1>
         </div>
         
@@ -39,7 +39,7 @@ $res2 = $tab[1];
 
         <!-- Plats sugérés par popularité : -->
 
-        <div class="col-md-4 col-12 d-flex justify-content-center mx-auto my-5 cat_count rounded p-3">  
+        <div class="col-xs-5 col-5 d-flex justify-content-center mx-auto my-5 cat_count rounded p-3">  
             <h1>Plats populaires</h1>
         </div>
 

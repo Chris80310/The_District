@@ -12,26 +12,26 @@ if (isset($_GET["id"])){
 // $suppr = delete_plat($_GET["id"]);
 ?>
 
-<div class="container col-md-7 div_cat mt-5 py-5 bg_admin">
+<div class="container col-xs-7 div_cat mt-5 py-5 bg_admin">
     <div>
-        <div class="col-md-5 col-8 d-flex justify-content-center m-auto my-5 cat_count rounded p-3">
+        <div class="col-xs-5 col-8 d-flex justify-content-center m-auto my-5 cat_count rounded p-3">
             <h2>Liste des plats</h2>
         </div>
         <hr class="w-75 mx-auto mt-3 mb-3">
         <br>
         <div class="text-center mb-5">
-            <a href="form_ajout_plat.php" class="col-md-2 col-4 btn btn-light btn-sm mx-3">Ajouter un plat</a>
-            <a href="admin.php" class="col-md-2 col-4 btn btn-light btn-sm mx-3">Retour</a>
+            <a href="form_ajout_plat.php" class="col-xs-2 col-4 btn btn-light btn-sm mx-3">Ajouter un plat</a>
+            <a href="admin.php" class="col-xs-2 col-4 btn btn-light btn-sm mx-3">Retour</a>
         </div>
         
         <div class="table-responsive">
             <table class="table_c table-bordered mx-3 table_admin">
                 <thead>
                     <tr>
-                        <th class="col-md-2 text-center">Nom du plat</th>
-                        <th class="col-md-2 text-center">Image</th>
-                        <th class="col-md-3 text-center">Active</th>
-                        <th class="col-md-2 text-center">Actions</th>
+                        <th class="col-xs-2 text-center">Nom du plat</th>
+                        <th class="col-xs-2 text-center">Image</th>
+                        <th class="col-xs-3 text-center">Active</th>
+                        <th class="col-xs-2 text-center">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,10 +41,10 @@ if (isset($_GET["id"])){
                             <td><img class="img-fluid col-12" src="assets/images_the_district/food/<?= $plat->image ?>"></td>
                             <td class="text-center"><h5><?= $plat->active ?></h5></td>
                             <td class="text-center">
-                                <a href="form_modif_plat.php=<?= $plat->id ?>" class="col-md-5 col-12 my-2 btn btn-light btn-sm">Modifier</a>
+                                <a href="form_modif_plat.php=<?= $plat->id ?>" class="col-xs-5 col-12 my-2 btn btn-light btn-sm">Modifier</a>
 
                                 <form method="POST">
-                                    <a href="suppr_cat.php=<?= $plat->id ?>" class="col-md-5 col-12 my-2 btn btn-light btn-sm btn-light" 
+                                    <a href="suppr_cat.php=<?= $plat->id ?>" class="col-xs-5 col-12 my-2 btn btn-light btn-sm btn-light" 
                                     onclick="return confirm('Voulez-vous vraiment supprimer cet élément ?')">Supprimer</a>
                                     <input type="hidden" name="del" value="<?= $plat->id ?>">
                                 </form>
